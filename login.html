@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGI - Phone Directory login</title>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/login/login.css">
+    <link rel="stylesheet" href="./assets/css/basics.css">
+</head>
+<body>
+    <main>
+        <section class="login">
+            <div class="login__container">
+                <div class="login__content-left">
+                  <img src="./assets/img/logos/agi-business_logo_blanco.png" alt="AGI logo">
+                </div>
+                <div class="login__content-right">
+                    <div class="login__right-title">
+                        <h2>Login in to your Account</h2>
+                        <span>Enter the company directory and explore information and collaboration.</span>
+                    </div>
+                    <form class="login__right-form">
+                        <label for="user">User:</label>
+                        <div class="input-container">
+                            <input class="login-input" type="email" id="userLogin" name="user" placeholder="Enter your email as a user" required ><br><br>
+                            <span class="input-icon-left"><i class='bx bx-user' ></i></span>
+                        </div>
+                    
+                        <label for="password">Password:</label>
+                        <div class="input-container">
+                            <span class="input-icon"><i class='bx bx-show' id="showPassword"></i></span>
+                            <input class="login-input " type="password" id="passwordLogin" name="password" placeholder="Enter your password..." required><br><br>
+                            <span class="input-icon-left"><i class='bx bx-lock' ></i></span>
+                            
+                        </div>
+                    
+                        <input id="btnLogin" class="login-btn" type="submit" value="Login">
+                    </form>
+                    <div class="login__bottom">
+                        <div class="login__bottom-data">
+                            <div class="login__data-line"></div>
+                            <p>If you don't have an account, please <span>contact</span> the IT department</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="/assets/js/login.js"></script>
+</body>
+</html>

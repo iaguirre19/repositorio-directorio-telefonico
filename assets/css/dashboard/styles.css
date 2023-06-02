@@ -1,0 +1,223 @@
+/*Google font CDN Link*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
+body{
+    background-color: var(--secunday-color);
+} 
+
+/****************Sidebar*******************/
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 7.8rem; 
+    background: var(--base-color);
+    padding: .6rem 1.4rem;
+    transition: all 0.6s ease;
+    border-right: 1px solid var(--reslt-color); 
+    z-index: 4;
+}
+.sidebar.active{
+    width:35rem;/*Cuando el boton se activa es el ancho del sidebar*/
+}
+
+.sidebar .logo_content .logo{
+    color: var(--text-color);
+    display: flex;
+    height: 5rem;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+.logo_content .logo i{
+    font-size: 3rem;
+    margin-right: .5rem;
+}
+.logo_content .logo .logo_name{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+.sidebar #btn{
+    position: absolute;
+    color: var(--text-color);
+    left: 50%;
+    top: .6rem;
+    font-size: 2.5rem;
+    height: 5rem;
+    width: 5rem;
+    text-align: center;
+    line-height: 5rem;
+    transform: translateX(-50%);
+}
+.sidebar.active #btn{
+    left: 92%; /*Esto coloca el icono de hamburguesa a la derecha pegado al borde cuando se activa el boton */
+}
+.sidebar ul{
+    margin-top: 2rem;
+}
+.sidebar ul li{
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    margin: 0 .5rem;
+    list-style: none;
+    line-height: 5rem;
+}
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 6.5rem;
+    top: 0;
+    transform: translateY(-50%, 50% );
+    border-radius: .6rem;
+    height: 3.5rem;
+    width: 12.2rem;
+    background-color: var(--text-color);
+    line-height: 3.5rem;
+    text-align: center;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity:0;
+    pointer-events: none;
+}
+.sidebar.active ul li .tooltip{
+    display: none;/*Cuando se activa el boton se oculta el submenu*/
+}
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+.sidebar ul li span{
+    font-size: 1.4rem;
+}
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius:1.2rem;
+    outline: none;
+    border: none;
+    background: var(--background-links);
+    padding-left: 5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+.sidebar ul li .bx-search{
+    position: absolute;
+    z-index: 99;
+    color: var(--text-color);
+    font-size: 2.2rem;
+    transition: all 0.5s ease;
+}
+.sidebar ul li .bx-search:hover{
+    background-color:var(--text-color);
+    color: var(--secunday-color);
+}
+.sidebar ul li a{
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-radius: 1.2rem;
+    white-space: nowrap;/*Elimina los espacios entre los iconos no bien acomodados*/
+}
+.sidebar ul li a:hover{
+    color: var(--text-color);
+    background-color: var(--hover-color);
+}
+.sidebar ul li i{
+    height: 5rem;
+    min-width: 5rem;
+    border-radius:1.2rem;
+    line-height: 5rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+/*Estos dos liks name lo que hace es solo mostrar los iconos a la orrilla, y cuando se activa lo muestra todo completo */
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+}
+.sidebar.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+.sidebar .profile_content{
+    position: absolute;
+    color: var(--text-color);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /*Esta parte es sobre la informacion del dev que lo coloca en la parte de abajo*/
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 1rem .6rem;
+    height: 6rem;
+    background-color: none;/*Esto hace que el background del log out no sea 100% si no mas bien como una caja pequena*/
+    transition: all 0.4s ease;
+}
+.sidebar.active .profile_content .profile{
+    background: var(--secunday-color);
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details img{
+    /**Esta es la parte de la imagen de perfil**/
+    height: 4.5rem;
+    width: 4.5rem;
+    object-fit: cover;
+    border-radius: 1.2rem;
+}
+.profile .profile_details .name_job{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.profile .profile_details .name{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.profile .profile_details .job{
+    font-size: 1.2rem;
+}
+/*Centro el boton de abajo que es para log out*/
+.profile #log_out{
+    position: absolute;
+    bottom: .5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    background: var(--background-links);
+}
+.sidebar.active .profile #log_out{
+    left: 92%;
+}
+.sidebar.active .profile #log_out{
+    background: none;
+}
+

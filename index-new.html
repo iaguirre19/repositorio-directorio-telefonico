@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/basics.css">
+    <link rel="stylesheet" href="./assets/css/dashboard/styles.css">
+    <link rel="stylesheet" href="./assets/css/directory/directory.css">
+    <link rel="stylesheet" href="./assets/css/directory/directory-header.css">
+    <link rel="stylesheet" href="./assets/css/directory/directory-body.css">
+    <link rel="stylesheet" href="./assets/css/directory/card-detail.css">
+
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                <img src="./assets/img/logos/agi-business_logo_blanco.png" alt="agi img" width="30px">
+                <div class="logo_name">Directory Phone</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="#dashboard">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#directory">
+                    <i class='bx bx-book-content' ></i>
+                    <span class="links_name">Directory</span>
+                </a>
+                <span class="tooltip">Directory</span>
+            </li>
+            <li>
+                <a href="#offices">
+                    <i class='bx bx-buildings' ></i>
+                    <span class="links_name">Offices</span>
+                </a>
+                <span class="tooltip">Offices</span>
+            </li>
+            <li>
+                <a href="#managers">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Managers</span>
+                </a>
+                <span class="tooltip">Managers</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img id="img-profile" src="./assets/img/profile-picture/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="profile image">
+                    <div class="name_job">
+                        <div class="name">Iran Aguirre</div>
+                        <div class="job">Web Designer</div>
+                    </div>
+                </div>
+                <a href="./login.html"><i class='bx bx-log-out' id="log_out" ></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="home_content">
+        <main>
+            <section class="dashboard"></section>
+            <section class="directory">
+                <div class="directory_container">
+                    <div class="directory_content">
+                        <div class="directory_content-header">
+                            <div class="content_img">
+                                <img src="./assets/img/logos/agi-business_logo_blanco.png" alt="agi img" width="30px">
+                                <span>Directory</span>
+                            </div>
+                            <div class="content_search-bar">
+                                <div class="search_bar-container">
+                                    <i class='bx bx-search search-icon' ></i>
+                                    <input id="searchBar" type="text" placeholder="Search...">
+                                </div>
+                            </div>
+                            <div class="content_add">
+                                <div class="add_circle-container">
+                                    <i class='bx bx-plus'></i>
+                                    <span class="tooltip-header">Add new user</span>
+                                </div>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="directory_content-body">
+                            <div class="container_cards-data">
+                                <div class="content_card">
+                                    <div class="content_card-header">
+                                        <span><i class='bx bx-user'></i></span>
+                                        <h5>Total Employees</h5>
+                                    </div>
+                                    <div class="content_card-data">
+                                        <p id="printData" class="data_number">1450</p>
+                                        <span>Workforce Snapshot</span>
+
+                                    </div>
+                                </div>
+                                <div class="content_card">
+                                    <div class="content_card-header">
+                                        <span><i class='bx bx-store'></i></span>
+                                        <h5>Office Count</h5>
+                                    </div>
+                                    <div class="content_card-data">
+                                        <p id="printData" class="data_number">33</p>
+                                        <span>Company's Locations</span>
+
+                                    </div>
+                                </div>
+                                <div class="content_card">
+                                    <div class="content_card-header">
+                                        <span><i class='bx bx-user'></i></span>
+                                        <h5>Manager Count</h5>
+                                    </div>
+                                    <div class="content_card-data">
+                                        <p id="printData" class="data_number">43</p>
+                                        <span>Experienced Leaders</span>
+
+                                    </div>
+                                </div>
+                                <div class="content_card">
+                                    <div class="content_card-header">
+                                        <span><i class='bx bx-buildings' ></i></span>
+                                        <h5>Office Headquarters</h5>
+                                    </div>
+                                    <div class="content_card-data">
+                                        <p id="printData" class="data_number">3</p>
+                                        <span>Centralized Headquarters</span>
+
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="container_card-directory">
+                                <div class="card_header">
+                                    <input class="check-box" type="checkbox" id="check" />
+                                    <h4 class="name">Name</h4>
+                                </div>
+                                <div id="profiles-container" class="card_content-directory"> 
+
+                                </div>
+                            </div>
+                            <div class="card_detail-container">
+                                <div class="card_detail-content">
+                                    <div class="card_contact-main">
+                                        <div class="contact_header">
+                                            <div class="header_img">
+                                                <img src="./assets/img/profile-picture/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="img profila" width="20px">
+                                            </div>
+                                            <div class="header-info">
+                                                <h5>Lewis Hamilton</h5>
+                                                <span class="card-email"><i class='bx bx-envelope'></i> Email</span>
+                                                <span class="card-phone"><i class='bx bx-phone' ></i>(456)325-17-89</span>
+                                            </div>
+                                            <div class="header-icons">
+                                                <span class="icons_right-header">  
+                                                    <i class='bx bx-envelope'></i>
+                                                </span>
+                                                <span class="icons_right-header">  
+                                                    <i class='bx bx-phone' ></i>
+                                                </span>
+                                                <span class="icons_right-header">  
+                                                    <i id="btnDots" class='bx bx-dots-horizontal-rounded'></i>
+                                                </span>
+                                                <div class="header_icons-dots">
+                                                    <div class="icons_dots-tooltip">
+                                                        <i class='bx bx-pencil'><span>Edit</span></i>
+                                                        <i class='bx bx-x'><span>Delete</span></i>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="contact_middle">
+                                            <div class="contact_middle-content">
+                                                <span>Job title</span>
+                                                <h3>IT Help Desk</h3>
+                                            </div>
+                                            <div class="contact_middle-content">
+                                                <span>Manager</span>
+                                                <h3>Christian Colorado</h3>
+                                            </div>
+                                            <div class="contact_middle-content">
+                                                <span>Office</span>
+                                                <h3>Rancho Cucamonca</h3>
+                                            </div>
+                                        </div>
+                                        <div class="contact_footer">
+                                            <div class="contact_footer-container">
+                                                <div class="contact__title">
+                                                    <h3>Notes</h3>
+                                                    <div class="contact_title-icon">
+                                                        <i class='bx bx-plus'></i>
+                                                        <span>Add note</span>
+                                                    </div>
+                                                </div>
+                                                <div class="contact_textarea">
+                                                    <textarea class="contact_textarea-content" placeholder="Type your note"></textarea>
+                                                    <div class="contact_footer-btn">
+                                                        <div class="footer_btn">
+                                                            <div class="footer-icons">
+                                                                <i class='bx bx-align-left'></i>
+                                                                <i class='bx bx-align-middle' ></i>
+                                                                <i class='bx bx-align-right' ></i>
+                                                            </div>
+                                                            <div class="footer-links">
+                                                                <a  href="#">Cancel</a>
+                                                                <button>Add note</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card_contact-notes">
+                                        <h2 class="card_messeges-title">Empty</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="offices"></section>
+            <section class="managers"></section>
+        </main>
+    </div>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/usersDirectory.js"></script>
+</body>
+</html>
