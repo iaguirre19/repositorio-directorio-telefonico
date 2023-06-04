@@ -51,7 +51,7 @@ function fillProfileData(users) {
     });
   }
   
-  var users = [
+  const users = [
     {
       imgSrc: 'https://cdn-1.motorsport.com/images/mgl/0mb95oa2/s400/lewis-hamilton-mercedes-1.webp',
       name: 'Lewis Hamilton',
