@@ -129,7 +129,7 @@ body{
     align-items: center;
     transition: all 0.4s ease;
     border-radius: 1.2rem;
-    white-space: nowrap;/*Elimina los espacios entre los iconos no bien acomodados*/
+    white-space: nowrap;
 }
 .sidebar ul li a:hover{
     color: var(--text-color);
@@ -143,7 +143,6 @@ body{
     font-size: 2rem;
     text-align: center;
 }
-/*Estos dos liks name lo que hace es solo mostrar los iconos a la orrilla, y cuando se activa lo muestra todo completo */
 .sidebar .links_name{
     opacity: 0;
     pointer-events: none;

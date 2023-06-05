@@ -141,12 +141,12 @@
 }
 .contact__title h3{
     color: var(--text-color);
-    font-size: 15px;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 .contact_title-icon{
     color: #58B17E;
-    font-size: 15px;
+    font-size: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +154,7 @@
 
 }
 .contact_title-icon i{
-    font-size: 20px;
+    font-size: 18px;
 }
 .contact_title-icon span{
     margin-left: 1rem;
@@ -171,7 +171,7 @@
 .contact_textarea-content{
     background-color: transparent;
     border: none;
-    font-size: 16px;
+    font-size: 1.4rem;
     color: var(--subtext-color);
     opacity: .7;
     outline: none;
@@ -410,11 +410,6 @@
 .header_left-data .header_rol{
     color: var(--subtext-color);
 }
-.header_right-date{
-    color: var(--text-color);
-    font-size: 1rem;
-    align-self: flex-end;
-}
 .notes_card-body{
     margin-left: 5rem;
     display: flex;
@@ -422,15 +417,22 @@
     row-gap: 1rem;
 }
 .notes_message{
-    height: 9rem;
+    height: 45%;
     background-color: #214c6c85;
     border-radius: .4rem;
     padding: 2rem 1.5rem;
     overflow: scroll;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+    display: grid;
+    grid-template-rows: 15% 85%;
+    
+}
+.header_right-date{
+    color: var(--text-color);
+    font-size: 1rem;
+    align-self: center;
+    justify-self: end;
+    margin-bottom: 1rem;
+    opacity: .7;
 }
 .body_text-p{
     font-size: 12px;
