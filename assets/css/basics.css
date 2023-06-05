@@ -47,6 +47,12 @@
     --font-number-card: 'Lato', sans-serif;
 
 }
+/* :root{
+    --base-color: #161819;
+    --secunday-color: #1F2125;
+    --text-color: #FFFFFF;
+    --subtext-color: #cacaca;
+} */
 html {
     box-sizing: border-box;
     font-size: 62.5%; /*1 rem es igual a 10px*/
