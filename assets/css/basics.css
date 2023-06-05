@@ -2,17 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Open+Sans:ital,wght@1,500&display=swap');
 :root{
     --base-color: #161819;
+    --base-color-sub:#191919;
     --text-color: #FFFFFF;
     --secunday-color: #1F2125;
+    --secundary-color-sub: #222222;
     --subtext-color: #cacaca;
     --btns-color: #926FED;
     --reslt-color:#4C4C4C;
     --link-color:#6A9EDC;
+    --link-color-sub:#fff;
     --background-icons-link:#926FED;
     --background-links:#393A3E;
     --background-cards-container:#181A1E;
     --background-elements: #292929;
     --hover-color:#926FED;
+    --hover-color-btns:#392396;
     --validation-color:RGB(153, 255, 153);
     --color-error:#DC0000;
     --color-icon-1: #99e5db;

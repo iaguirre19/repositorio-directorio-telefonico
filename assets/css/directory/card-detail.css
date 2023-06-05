@@ -5,7 +5,7 @@
 .card_detail-container{
     background-color: var(--base-color);
     width: 100%;
-    height: 100%;
+    height: 95%;
     padding: 2rem;
     border-radius: 2rem;
 }
@@ -22,8 +22,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    /* grid-template-rows: .8fr .6fr 2fr; */
-    grid-template-rows: 25% 20% 55%;
+    grid-template-rows: 25% 15% 60%;
     border-right: 1px solid var(--reslt-color); 
 }
 .contact_header{
@@ -137,6 +136,7 @@
 .contact__title{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
     
 }
 .contact__title h3{
@@ -235,7 +235,7 @@
 
 /* The switch - the box around the slider */
 .switch {
-  font-size: 17px;
+  font-size: 1.7rem;
   position: relative;
   display: inline-block;
   width: 3.5em;
@@ -282,7 +282,7 @@
 .tooltip-header{
     position: absolute;
     right: -4rem;
-    font-size: 14px;
+    font-size: 1.4rem;
     bottom: -3rem;
     transform: translateX(-50%, 50% );
     border-radius: .6rem;
@@ -308,8 +308,8 @@
     top: 4.3rem;
     right: .1rem;
     background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: .1rem solid #ccc;
+    padding: 1rem;
     z-index: 1;
     height: 10rem;
     width: 13rem;
@@ -342,8 +342,6 @@
 }
 .icons_dots-tooltip div:nth-child(1) span,
 .icons_dots-tooltip div:nth-child(2) span{
-    font-size: 16px;
+    font-size: 1.6rem;
     margin-left: 1.5rem;
 }
-
-
