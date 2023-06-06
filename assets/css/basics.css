@@ -4,6 +4,7 @@
     --base-color: #161819;
     --base-color-sub:#191919;
     --text-color: #FFFFFF;
+    --text-color-sidebar:#FFFFFF; 
     --secunday-color: #1F2125;
     --secundary-color-sub: #222222;
     --subtext-color: #cacaca;
@@ -15,6 +16,7 @@
     --background-links:#393A3E;
     --background-cards-container:#181A1E;
     --background-elements: #292929;
+    --background-message:#214c6c85;
     --hover-color:#926FED;
     --hover-color-btns:#392396;
     --validation-color:RGB(153, 255, 153);
@@ -68,6 +70,21 @@ body{
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
+}
+body.light-theme{
+    --text-color: #161819;
+    --body-light-color: #F5F7F9;
+    --background-cards-light:#EAEEF6;
+    --background-cards-main-light:#fff;
+    --reslt-color: #aaaaaac3;
+    --link-color-sub:#007bff;
+    --subtext-color:#333;
+    --btns-color: #007bff;
+    --text-color-btns: #fff;
+    --background-message:#E6EFFC;
+    --box-shadow-ligth:0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-card-light:0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-card-light-midd:0 4px 8px rgba(0, 0, 0, 0.2);
 }
 a{
     text-decoration: none;
@@ -127,7 +144,9 @@ main{
 .directory{
     background-color: var(--secunday-color);
 }
-  
+body.light-theme .directory{
+    background-color: var(--body-light-color);
+}
   ::-webkit-scrollbar{
     width: .60rem;
     background-color: var(--background-links);
@@ -140,3 +159,14 @@ main{
   ::-webkit-scrollbar-thumb:hover{
     background-color: var(--color-icon-2);
   }
+
+  /* body.dark-theme .sidebar{
+  /* Aquí puedes agregar los estilos que deseas aplicar cuando se active el tema oscuro */
+  /* background-colocr: #fff; */
+  /* color: #fff; */
+/* } */
+
+/* .dark-theme .change-theme { */
+  /* Aquí puedes ajustar los estilos del icono cuando se active el tema oscuro */
+  /* color: #fff; */
+/* } */ 

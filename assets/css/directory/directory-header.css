@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 3fr .5fr .5fr;
     align-items: center;
     justify-items: center;
-    border-bottom: solid 1px var(--secunday-color);
+    /* border-bottom: solid 1px var(--secunday-color); */
 }
 .directory_content-header .content_img{
     width: 100%;
@@ -12,6 +12,17 @@
     align-items: center;
     justify-content: left;
 }
+
+.logo_light-mode{
+    display: none;
+}
+body.light-theme .logo_light-mode{
+    display: block;
+}
+body.light-theme .logo_dark-mode{
+    display: none;
+}
+
 .directory_content-header .content_img img{
     object-fit: contain;
     width: 5rem;
@@ -44,8 +55,11 @@
     color: var(--subtext-color);
     font-size: 15px;
     box-shadow: var(--shadow-inputs);
-
-
+}
+body.light-theme .search_bar-container input{
+    background-color: var(--background-cards-light);
+    box-shadow: var(--box-shadow-ligth);
+    border: 1px solid var(--reslt-color);
 }
 .search-icon{
     font-size: 1.8rem;
@@ -64,15 +78,21 @@
     position: relative;
 }
 .add_circle-container{
-    width: 4.5rem;
-    height: 4.5rem;
+    /* width: 4rem; */
+    /* height: 4rem; */
+    padding: 1rem 1rem;
     background-color: var(--btns-color);
-    display: grid;
-    place-content: center;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    border-radius: .7rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     transition: all .3s ease-in-out;
     cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+body.light-theme .add_circle-container{
+    color: var(--text-color-btns);
 }
 .add_circle-container:hover{
     background-color: var(--hover-color-btns);
@@ -80,15 +100,22 @@
 }
 .add_circle-container .bx-plus{
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 2.2rem;
     font-weight:600;
+    margin-left: 1.3rem;
+}
+body.light-theme .add_circle-container .bx-plus{
+    color:var(--text-color-btns) ;
 }
 .change-theme{
-    font-size: 2.25rem;
+    font-size: 2.8rem;
     color: var(--text-color);
-    margin-right: 1rem;
+    margin-right: 2rem;
     cursor: pointer;
-  }
+}
+/* body.light-theme .change-theme{
+    color: var(--text-color-btns);
+} */
   .change-theme:hover{
     color: var(--hover-color-btns);
   }

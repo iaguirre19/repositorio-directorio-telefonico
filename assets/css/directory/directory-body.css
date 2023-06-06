@@ -18,6 +18,9 @@
     justify-content: space-between;
     column-gap: 2rem;
 }
+body.light-theme .container_cards-data{
+    background-color: var(--background-cards-light);
+}
 .content_card{
     width: 25%;
     height: 100%;
@@ -26,7 +29,10 @@
     padding: 1rem 1.5rem;
     display: grid;
     grid-template-rows: 45% 55%;
-    box-shadow: var(--shadow-cards-small);
+    box-shadow: var(--box-shadow-card-light);
+}
+body.light-theme .content_card{
+    background-color: var(--background-cards-main-light);
 }
 .content_card-header{
     display: flex;
@@ -100,6 +106,9 @@
     display: grid;
     grid-template-rows: 10% 90%;
     overflow: auto;
+}
+body.light-theme .container_card-directory{
+    background-color: var(--background-cards-light);
 }
 .card_header{
     display: grid;
