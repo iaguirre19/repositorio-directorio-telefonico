@@ -49,12 +49,6 @@
     --font-number-card: 'Lato', sans-serif;
 
 }
-/* :root{
-    --base-color: #161819;
-    --secunday-color: #1F2125;
-    --text-color: #FFFFFF;
-    --subtext-color: #cacaca;
-} */
 html {
     box-sizing: border-box;
     font-size: 62.5%; /*1 rem es igual a 10px*/
@@ -80,6 +74,7 @@ body.light-theme{
     --link-color-sub:#007bff;
     --subtext-color:#333;
     --btns-color: #007bff;
+    --btns-hover-light:#fff;
     --text-color-btns: #fff;
     --background-message:#E6EFFC;
     --box-shadow-ligth:0 2px 4px rgba(0, 0, 0, 0.1);
@@ -120,7 +115,7 @@ main{
 
 .sidebar.active ~ .home_content{
     width: calc(100% - 342px);
-    left: 36.2rem;
+    left: 35rem;
     /* z-index: -1; */
 }
 .dashboard,

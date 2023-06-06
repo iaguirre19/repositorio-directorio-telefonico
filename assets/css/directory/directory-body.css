@@ -131,7 +131,7 @@ body.light-theme .container_card-directory{
 .card_content-directory{
     display: grid;
     height: 100%;
-    padding-left: .5rem;
+    padding-left: 1rem;
     padding-right: 1rem;
     align-items: center;
 }
@@ -145,7 +145,7 @@ body.light-theme .container_card-directory{
     transition: all .3s ease;
 }
 .card_profile:hover{
-    background-color: var(--hover-color);
+    background-color: var(--btns-hover-light);
     border-radius: 5px;
 }
 .check-box-directory{
@@ -185,7 +185,7 @@ body.light-theme .container_card-directory{
     font-size: 3rem;
 }
 .card_profile:hover  span i {
-    color: white;
+    /* box-shadow: var(--box-shadow-card-light); */
 } 
 /* section notes */
 .contact_footer{

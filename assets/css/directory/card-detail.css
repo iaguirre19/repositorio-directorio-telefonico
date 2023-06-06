@@ -56,18 +56,19 @@ body.light-theme .card_detail-content{
 .header-info{
     margin-left: 1.5rem;
 }
-.header-info h5{
+.header-info .header_title-info{
     font-size: calc(var(--subtitles-size) - 1.2rem);
     color: var(--text-color);
     font-weight: 500;
     margin-bottom: .8rem;
 }
-.header-info span{
+.header-info .card-info{
     color: var(--subtext-color);
-    font-size: 13px;
+    font-size: 1.3rem;
+    display: inline-block;
     opacity: .6;
 }
-.card-phone{
+.header-info .card-phone{
     margin-left: 1.5rem;
 }
 .header-icons{
@@ -348,27 +349,28 @@ body.light-theme .tooltip-header{
     row-gap: .5rem;
 }
 
-.icons_dots-tooltip div{
+.icons_dots-tooltip a{
     display: flex;
     align-items: center;
     height: 4rem;
-}
-.icons_dots-tooltip div:nth-child(1) i,
-.icons_dots-tooltip div:nth-child(2) i{
-    font-size: 20px;
     cursor: pointer;
 }
+.icons_dots-tooltip a:nth-child(1) i,
+.icons_dots-tooltip a:nth-child(2) i{
+    font-size: 20px;
+}
 
-.icons_dots-tooltip div:nth-child(1) i{
+.icons_dots-tooltip a:nth-child(1) i{
     color: var(--hover-color);
 }
-.icons_dots-tooltip div:nth-child(2) i{
+.icons_dots-tooltip a:nth-child(2) i{
     color: var(--color-error);
 }
-.icons_dots-tooltip div:nth-child(1) span,
-.icons_dots-tooltip div:nth-child(2) span{
-    font-size: 1.6rem;
-    margin-left: 1.5rem;
+.icons_dots-tooltip a:nth-child(1) span,
+.icons_dots-tooltip a:nth-child(2) span{
+    font-size: 1.3rem;
+    margin-left: 2rem;
+    
 }
 /* notes section of the infor card */
 

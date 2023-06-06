@@ -10,4 +10,13 @@
     grid-template-rows: 10% 90%;
     margin: 0 auto;
   }
-  
+  /* .sidebar.active .logo_dashboard{
+      display: none;
+  } */
+  .logo_dashboard{
+      display: block;
+  }
+
+  .sidebar.active ~ .home_content .logo_dashboard{
+      display: none;
+  }

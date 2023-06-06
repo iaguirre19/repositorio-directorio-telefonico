@@ -75,8 +75,8 @@
                     <div class="directory_content">
                         <div class="directory_content-header">
                             <div class="content_img">
-                                <img class="logo_dark-mode" src="./assets/img/logos/agi-business_logo_blanco.png" alt="agi img" width="30px">
-                                <img class="logo_light-mode" src="./assets/img/logos/agi-blue-logo.webp" alt="agi img" width="30px">
+                                <img class="logo_dark-mode logo_dashboard" src="./assets/img/logos/agi-business_logo_blanco.png" alt="agi img" width="30px">
+                                <img class="logo_light-mode logo_dashboard" src="./assets/img/logos/agi-blue-logo.webp" alt="agi img" width="30px">
                                 <span>Directory</span>
                             </div>
                             <div class="content_search-bar">
@@ -92,11 +92,6 @@
                                 </div>
                             </div>
                             <i class='bx bx-sun change-theme' id="theme-button"></i>
-                            <!-- <i class="uil uil-moon change-theme" id="theme-button"></i> -->
-                            <!-- <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider"></span>
-                            </label> -->
                         </div>
                         <div class="directory_content-body">
                             <div class="container_cards-data">
@@ -162,9 +157,15 @@
                                                 <img src="./assets/img/profile-picture/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="img profila" width="20px">
                                             </div>
                                             <div class="header-info">
-                                                <h5>Lewis Hamilton</h5>
-                                                <span class="card-email"><i class='bx bx-envelope'></i> Email</span>
-                                                <span class="card-phone"><i class='bx bx-phone' ></i>(456)325-17-89</span>
+                                                <h5 class="header_title-info">Lewis Hamilton</h5>
+                                                <div class="card-email card-info">
+                                                    <i class='bx bx-envelope'></i>
+                                                    <span>lewis@agi.com</span>
+                                                </div>
+                                                <div class="card-phone card-info">
+                                                    <i class='bx bx-phone'></i>
+                                                    <span>(456)325-17-89</span>
+                                                </div>
                                             </div>
                                             <div class="header-icons">
                                                 <span class="icons_right-header">  
@@ -178,14 +179,14 @@
                                                 </span>
                                                 <div class="header_icons-dots">
                                                     <div class="icons_dots-tooltip">
-                                                        <div>
+                                                        <a href="#">
                                                             <i class='bx bx-pencil'></i>
                                                             <span>Edit</span>
-                                                        </div>
-                                                        <div>
+                                                        </a>
+                                                        <a href="#">
                                                             <i class='bx bx-x'></i>
                                                             <span>Delete</span>
-                                                        </div>
+                                                        </a>
                                                     </div>  
                                                 </div>
                                             </div>
