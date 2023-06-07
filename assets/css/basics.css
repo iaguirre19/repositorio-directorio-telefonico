@@ -6,7 +6,7 @@
     --text-color: #FFFFFF;
     --text-color-sidebar:#FFFFFF; 
     --secunday-color: #1F2125;
-    --secundary-color-sub: #222222;
+    --secundary-color-sub: #1F2125;
     --subtext-color: #cacaca;
     --btns-color: #926FED;
     --reslt-color:#4C4C4C;
@@ -34,7 +34,7 @@
     --subtitles-size: 28px;
     --paragraphs-size: 20px;
     --links-size: 18px;
-    --section-headers-size: 36px;
+    --section-headers-size: 32px;
     --sub-headers-size: 18px;
     --size-icons-cards: 24px;
 
@@ -44,6 +44,12 @@
     --shadow-btn-hover: 2px 2px 8px rgba(0, 0, 0, 0.6);
     --shadow-small: 1px 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-inputs: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    
+    /* Modal z-index */
+    --z-index-negative:-1;
+    --z-index-modal: 100;
+    --z-index-background: 50;
 
     /* font family */
     --font-number-card: 'Lato', sans-serif;
@@ -70,6 +76,7 @@ body.light-theme{
     --body-light-color: #F5F7F9;
     --background-cards-light:#EAEEF6;
     --background-cards-main-light:#fff;
+    --secundary-color-sub: #fff;
     --reslt-color: #aaaaaac3;
     --link-color-sub:#007bff;
     --subtext-color:#333;
@@ -154,14 +161,3 @@ body.light-theme .directory{
   ::-webkit-scrollbar-thumb:hover{
     background-color: var(--color-icon-2);
   }
-
-  /* body.dark-theme .sidebar{
-  /* Aquí puedes agregar los estilos que deseas aplicar cuando se active el tema oscuro */
-  /* background-colocr: #fff; */
-  /* color: #fff; */
-/* } */
-
-/* .dark-theme .change-theme { */
-  /* Aquí puedes ajustar los estilos del icono cuando se active el tema oscuro */
-  /* color: #fff; */
-/* } */ 

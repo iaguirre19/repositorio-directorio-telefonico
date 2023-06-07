@@ -71,6 +71,7 @@
         <main>
             <section class="dashboard"></section>
             <section class="directory">
+                <div class="background-modal"></div>
                 <div class="directory_container">
                     <div class="directory_content">
                         <div class="directory_content-header">
@@ -92,6 +93,65 @@
                                 </div>
                             </div>
                             <i class='bx bx-sun change-theme' id="theme-button"></i>
+                            <div class="add_newuser-modal">
+                                <div class="add_newuser-content">
+                                    <div class="content-img">
+                                        <input type="file" id="upload-input" accept="image/*">
+                                    </div>
+                                    <form class="new_user-form">
+                                        <div class="form-content">
+                                            <label for="user">Full Name:</label>
+                                            <div class="input-container">
+                                                <input class="login-input" type="text" id="userLogin" name="user" placeholder="Enter your email as a user" required >
+                                                <span class="input-icon-left"><i class='bx bx-user' ></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-content">
+                                            <label for="email">Email:</label>
+                                            <div class="input-container">
+                                                <input class="login-input" type="email" id="email" name="email" placeholder="Enter your email" required>
+                                                <span class="input-icon-left"><i class='bx bx-envelope'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-content">
+                                            <label for="phone">Phone Number:</label>
+                                            <div class="input-container">
+                                                <input class="login-input" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                                <span class="input-icon-left"><i class='bx bx-phone'></i></span>
+                                            </div>
+                                        </div>                                           
+                                        <div class="form-content">
+                                            <label for="job-title">Job Title:</label>
+                                            <div class="input-container">
+                                                <input class="login-input" type="text" id="job-title" name="job-title" placeholder="Enter your job title" required>
+                                                <span class="input-icon-left"><i class='bx bx-briefcase'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-content">
+                                            <label for="manager">Manager:</label>
+                                            <div class="input-container">
+                                                <input class="login-input" type="text" id="manager" name="manager" placeholder="Enter your manager's name" required>
+                                                <span class="input-icon-left"><i class='bx bx-user'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-content">
+                                            <label for="office">Office:</label>
+                                            <div class="input-container">
+                                                <input class="login-input" type="text" id="office" name="office" placeholder="Enter your office" required>
+                                                <span class="input-icon-left"><i class='bx bx-building'></i></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-content">
+                                            <label for="note">Note</label>
+                                            <textarea name="note" id="" cols="20" rows="4"></textarea>
+                                        </div>
+                                        <div class="input-content">
+                                            <a href="#">Cancel</a>
+                                            <button type="submit">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="directory_content-body">
                             <div class="container_cards-data">
@@ -146,7 +206,7 @@
                                     <h4 class="name">Name</h4>
                                 </div>
                                 <div id="profiles-container" class="card_content-directory"> 
-
+                                    <!-- here will contain all the user profiles list -->
                                 </div>
                             </div>
                             <div class="card_detail-container">
@@ -158,13 +218,15 @@
                                             </div>
                                             <div class="header-info">
                                                 <h5 class="header_title-info">Lewis Hamilton</h5>
-                                                <div class="card-email card-info">
-                                                    <i class='bx bx-envelope'></i>
-                                                    <span>lewis@agi.com</span>
-                                                </div>
-                                                <div class="card-phone card-info">
-                                                    <i class='bx bx-phone'></i>
-                                                    <span>(456)325-17-89</span>
+                                                <div class="card_info-container">
+                                                    <div class="card-email card-info">
+                                                        <i class='bx bx-envelope'></i>
+                                                        <span>lewis@agi.com</span>
+                                                    </div>
+                                                    <div class="card-phone card-info">
+                                                        <i class='bx bx-phone'></i>
+                                                        <span>(456)325-17-89</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="header-icons">
@@ -258,14 +320,14 @@
                                                                 <span class="header_right-day">Today</span>
                                                                 <span class="header_right-hrs">9:34</span>
                                                             </div>
-                                                            <p class="body_text-p" id="">Welcome to our team! We're excited to have you on board and look forward to working together towards our shared goals.</p>
+                                                            <p class="body_text-p" id="">Welcome to our team! We're excited to have forward to working together towards our shared goals.</p>
                                                         </div>
                                                         <div class="notes_message">
                                                             <div class="header_right-date">
                                                                 <span class="header_right-day">Monday</span>
                                                                 <span class="header_right-hrs">17:20</span>
                                                             </div>
-                                                            <p class="body_text-p" id="">We're delighted to have you join our team! Your expertise and enthusiasm will undoubtedly contribute to our success. Welcome aboard!</p>
+                                                            <p class="body_text-p" id="">We're delighted to have you join our team! Your expertise and success. Welcome aboard!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -286,5 +348,6 @@
     <script src="./assets/js/usersDirectory.js"></script>
     <script src="./assets/js/directory.js"></script>
     <script src="./assets/js/chnageTheme.js"></script>
+    <script src="./assets/js/addNewUserModal.js"></script>
 </body>
 </html>

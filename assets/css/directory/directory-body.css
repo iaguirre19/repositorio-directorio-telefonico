@@ -145,6 +145,10 @@ body.light-theme .container_card-directory{
     transition: all .3s ease;
 }
 .card_profile:hover{
+    background-color: var(--hover-color);
+    border-radius: 5px;
+}
+body.light-theme .card_profile:hover{
     background-color: var(--btns-hover-light);
     border-radius: 5px;
 }
@@ -184,9 +188,9 @@ body.light-theme .container_card-directory{
     color: var(--link-color-sub);
     font-size: 3rem;
 }
-.card_profile:hover  span i {
-    /* box-shadow: var(--box-shadow-card-light); */
-} 
+/* .card_profile:hover  span i {
+    box-shadow: var(--box-shadow-card-light);
+}  */
 /* section notes */
 .contact_footer{
     padding: 2rem;
