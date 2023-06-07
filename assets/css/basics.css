@@ -29,6 +29,7 @@
     --color-icon-3sub: #cca300;
     --color-icon-4: #ff829a;
     --color-icon-4sub: #ff4c6f;
+    --background-modal: rgba(166, 166, 166, 0.298);
     /* Fonts */
     --main-title-size: 42px;
     --subtitles-size: 28px;
@@ -87,6 +88,7 @@ body.light-theme{
     --box-shadow-ligth:0 2px 4px rgba(0, 0, 0, 0.1);
     --box-shadow-card-light:0 2px 4px rgba(0, 0, 0, 0.1);
     --box-shadow-card-light-midd:0 4px 8px rgba(0, 0, 0, 0.2);
+    --background-modal: rgba(0, 0, 0, 0.298);
 }
 a{
     text-decoration: none;
