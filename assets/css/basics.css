@@ -12,6 +12,7 @@
     --reslt-color:#4C4C4C;
     --link-color:#6A9EDC;
     --link-color-sub:#fff;
+    --background-inputs:#fff;
     --background-icons-link:#926FED;
     --background-links:#393A3E;
     --background-cards-container:#181A1E;
@@ -85,6 +86,7 @@ body.light-theme{
     --btns-hover-light:#fff;
     --text-color-btns: #fff;
     --background-message:#E6EFFC;
+    --background-inputs:#EAEEF6;
     --box-shadow-ligth:0 2px 4px rgba(0, 0, 0, 0.1);
     --box-shadow-card-light:0 2px 4px rgba(0, 0, 0, 0.1);
     --box-shadow-card-light-midd:0 4px 8px rgba(0, 0, 0, 0.2);

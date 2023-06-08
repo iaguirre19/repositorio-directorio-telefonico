@@ -408,11 +408,12 @@ body.light-theme .tooltip-header{
 .notes_cards{
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .notes_card-body {
   margin-left: 5rem;
+  margin-right: 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;

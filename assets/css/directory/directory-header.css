@@ -122,9 +122,10 @@ body.light-theme .add_circle-container .bx-plus{
     color: var(--hover-color-btns);
 }
 .add_newuser-modal{
+    display: none;
     position: absolute;
     width: 40rem;
-    height: 62rem;
+    height: 90%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -136,6 +137,7 @@ body.light-theme .add_circle-container .bx-plus{
     opacity: 0;
 }
 .add_newuser-modal.active-modal{
+    display: block;
     z-index: var(--z-index-modal);
     opacity: 1;
 }
@@ -165,7 +167,7 @@ body.light-theme .add_circle-container .bx-plus{
   overflow: hidden;
 }
 
-#upload-input {
+#userProfilePicture {
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -205,13 +207,13 @@ body.light-theme .add_circle-container .bx-plus{
 }
 .form-content{
     display: grid;
-    grid-template-rows:40% 60%;
+    grid-template-rows:35% 65%;
     margin-bottom: 1rem;
 }
 .form-content label{
     font-size: 1.2rem;
     color: var(--text-color);
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 .form-content:nth-child(1){
     grid-column: 1/3;
@@ -246,7 +248,16 @@ body.light-theme .add_circle-container .bx-plus{
     display: grid;
     place-content: center;
     box-shadow: var(--box-shadow-ligth);
+    transition: all .3s ease-in-out;
     
+}
+.input-container.active .input-icon-left{
+    background-color: var(--validation-color);
+    color: black;
+}
+.input-container.active-error .input-icon-left{
+    background-color: var(--color-error);
+    color: white;
 }
 .login-input{
     width: 100%;
@@ -255,6 +266,7 @@ body.light-theme .add_circle-container .bx-plus{
     border: none;
     border-radius: .4rem;
     outline: var(--btns-color);
+    background-color: var(--background-inputs);
     
 }
 .text_are-modale{
@@ -264,10 +276,15 @@ body.light-theme .add_circle-container .bx-plus{
     resize: none;
     margin: .1rem .5rem;
     border-radius: .8rem;
+    font-family: 'Poppins', sans-serif;
 }
-body.light-theme .text_are-modale{
+.form-content.active .text_are-modale{
+    border: 1px solid var(--validation-color);
+}
+
+/* body.light-theme .text_are-modale{
     background-color: var(--background-cards-light);
-}
+} */
 .input-content{
     box-sizing: border-box;
     margin-top: 1rem;

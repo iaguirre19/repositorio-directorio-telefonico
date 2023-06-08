@@ -96,59 +96,59 @@
                             <div class="add_newuser-modal">
                                 <div class="add_newuser-content">
                                     <div class="content-img">
-                                        <input type="file" id="upload-input" accept="image/*">
+                                        <input class="input-modal" type="file" id="userProfilePicture" accept="image/*">
                                     </div>
                                     <form class="new_user-form">
                                         <div class="form-content">
                                             <label for="user">Full Name:</label>
                                             <div class="input-container">
-                                                <input class="login-input" type="text" id="userLogin" name="user" placeholder="Enter your full name" required>
+                                                <input class="login-input input-modal" type="text" id="user" name="user" placeholder="Enter your full name" required>
                                                 <span class="input-icon-left"><i class='bx bx-user'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="email">Email:</label>
                                             <div class="input-container">
-                                                <input class="login-input" type="email" id="email" name="email" placeholder="Enter your email" required>
+                                                <input class="login-input input-modal" type="email" id="email" name="email" placeholder="Enter your email" required>
                                                 <span class="input-icon-left"><i class='bx bx-envelope'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="phone">Phone Number:</label>
                                             <div class="input-container">
-                                                <input class="login-input" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                                <input class="login-input input-modal" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
                                                 <span class="input-icon-left"><i class='bx bx-phone'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="job-title">Job Title:</label>
                                             <div class="input-container">
-                                                <input class="login-input" type="text" id="job-title" name="job-title" placeholder="Enter your job title" required>
+                                                <input class="login-input input-modal" type="text" id="job-title" name="job-title" placeholder="Enter your job title" required>
                                                 <span class="input-icon-left"><i class='bx bx-briefcase'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="manager">Manager:</label>
                                             <div class="input-container">
-                                                <input class="login-input" type="text" id="manager" name="manager" placeholder="Enter your manager's name" required>
+                                                <input class="login-input input-modal" type="text" id="manager" name="manager" placeholder="Enter your manager's name" required>
                                                 <span class="input-icon-left"><i class='bx bx-user'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="office">Office:</label>
                                             <div class="input-container">
-                                                <input class="login-input" type="text" id="office" name="office" placeholder="Enter the office" required>
+                                                <input class="login-input input-modal" type="text" id="office" name="office" placeholder="Enter the office" required>
                                                 <span class="input-icon-left"><i class='bx bx-building'></i></span>
                                             </div>
                                         </div>
                                         
                                         <div class="form-content">
-                                            <label for="note">Note</label>
-                                            <textarea class="text_are-modale" name="note" id="" cols="20" rows="6" placeholder="Type a note please..."></textarea>
+                                            <label for="noteArea">Note</label>
+                                            <textarea class="text_are-modale " name="note" id="noteArea" cols="20" rows="6" placeholder="Type a note please..."></textarea>
                                         </div>
                                         <div class="input-content">
-                                            <button>Cancel</button>
-                                            <button type="submit">Save</button>
+                                            <button class="cancel">Cancel</button>
+                                            <button id="btnModalForm" type="submit">Save</button>
                                         </div>
                                     </form>
                                 </div>
@@ -349,6 +349,7 @@
     <script src="./assets/js/usersDirectory.js"></script>
     <script src="./assets/js/directory.js"></script>
     <script src="./assets/js/chnageTheme.js"></script>
-    <script src="./assets/js/addNewUserModal.js"></script>
+    <script type="module" src="./assets/js/addNewUserModal.js"></script>
+    <script type="module" src="./assets/js/formModalValidation.js"></script>
 </body>
 </html>
