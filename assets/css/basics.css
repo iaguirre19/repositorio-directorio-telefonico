@@ -14,6 +14,7 @@
     --link-color-sub:#fff;
     --background-inputs:#fff;
     --background-icons-link:#926FED;
+    --btn-modal:#926FED;
     --background-links:#393A3E;
     --background-cards-container:#181A1E;
     --background-elements: #292929;
@@ -91,6 +92,7 @@ body.light-theme{
     --box-shadow-card-light:0 2px 4px rgba(0, 0, 0, 0.1);
     --box-shadow-card-light-midd:0 4px 8px rgba(0, 0, 0, 0.2);
     --background-modal: rgba(0, 0, 0, 0.298);
+    --btn-modal:#007bff;
 }
 a{
     text-decoration: none;
