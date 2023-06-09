@@ -2,8 +2,6 @@
 
 const inputModal = document.querySelectorAll(".input-modal");
 const btnSaveNewUser = document.querySelector("#btnModalForm");
-// const uploadInput = document.getElementById("userProfilePicture");
-// const contentImg = document.querySelector(".content-img");
 const cancel = document.querySelector(".cancel")
 const input = document.getElementById("profile-img");
 const image = document.getElementById("profileImage");
@@ -13,8 +11,18 @@ const usersArray = [];
 evenstListeners();
 function evenstListeners(){
   btnSaveNewUser.addEventListener("click", getInfUser);
+  input.addEventListener("change", uploadImage);
+  cancel.addEventListener("click", closeModalForm)
+}
+function clearFormInputs(input) {
+  input.value = "";
+
 }
 
+function clearPictureModal(){
+  image.src = "";
+  image.style.opacity = '0';
+}
 
 
 function getInfUser(e) {
@@ -24,18 +32,20 @@ function getInfUser(e) {
 
   inputModal.forEach((input) => {
     newUser[input.id] = input.value;
-    input.value = "";
+    clearFormInputs(input);
+    validateBackgroundInputs(input)
   });
-  image.src = "";
-  image.style.opacity = '0';
+  clearPictureModal();
   usersArray.push(newUser);
   console.log(usersArray);
 }
 
+function closeModalForm(){
+  clearPictureModal()
 
+}
 
-
-input.addEventListener("change", function () {
+function uploadImage() {
   const file = input.files[0];
   if (file) {
     const reader = new FileReader();
@@ -45,11 +55,7 @@ input.addEventListener("change", function () {
     };
     reader.readAsDataURL(file);
   }
-});
-
-
-
-
+};
 
 
 function handleInputFocus(input) {
@@ -63,6 +69,12 @@ function handleInputBlur(input) {
     parentElement.classList.add("active-error");
   } else {
     parentElement.classList.add("active");
+  }
+}
+
+function validateBackgroundInputs(input){
+  if(input.parentElement.classList.contains("active")){
+    input.parentElement.classList.remove("active");
   }
 }
 
