@@ -7,6 +7,11 @@ const btnNewUser = document.querySelector(".content_add");
 const background = document.querySelector(".background-modal");
 const newUserModal = document.querySelector(".add_newuser-modal");
 const cancel = document.querySelector(".cancel");
+const errorMessage = document.querySelector(".error-message");
+
+
+
+
 
 btnSaveNewUser.addEventListener("click", handleSaveNewUser);
 input.addEventListener("change", handleImageUpload);
@@ -72,7 +77,7 @@ function captureUserData() {
   if (isEmptyField) {
     return null;
   }
-  console.log(inputEmptys)
+  // console.log(inputEmptys)
   return newUser;
 }
 
@@ -117,35 +122,18 @@ function addUserToArray(user) {
 // }
 
 function handleSaveNewUser(e) {
-  e.preventDefault();
+  // e.preventDefault();
 
   const user = captureUserData();
   if (user === null) {
-    console.log("Por favor complete todos los campos");
+    console.log("please enter a user name")
+    // parentElement.classList.add("active-error", "active-error-message");
     return;
   }
 
   clearProfilePicture();
   addUserToArray(user);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // convert the image to a file and then show the profile picture in the section 
 function handleImageUpload() {
