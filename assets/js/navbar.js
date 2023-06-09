@@ -13,11 +13,3 @@ function showSideBar(){
     sidebar.classList.toggle("active");
 }
 
-
-// btn.onclick = function(){
-//     sidebar.classList.toggle("active");
-// }
-// searchBtn.onclick = function(){
-//     sidebar.classList.toggle("active");
-// }
-

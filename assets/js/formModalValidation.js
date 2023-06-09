@@ -50,31 +50,104 @@ function clearProfilePicture() {
   image.style.opacity = "0";
 }
 
+
 function captureUserData() {
   const newUser = {};
 
+  let isEmptyField = false;
   inputModal.forEach((input) => {
     newUser[input.id] = input.value;
-    clearInputField(input);
-    validateInputBackground(input);
+    
+    if (input.value === "") {
+      isEmptyField = true;
+      input.parentElement.classList.add("active-error");
+      console.log(`El campo ${input.id} está vacío.`);
+    }else{
+      clearInputField(input);
+      validateInputBackground(input);
+      clearProfilePicture(input);
+    }
   });
 
+  if (isEmptyField) {
+    return null;
+  }
+  console.log(inputEmptys)
   return newUser;
 }
 
+
+
+
+
+
+
+
+// function captureUserData() {
+//   const newUser = {};
+
+//   inputModal.forEach((input) => {
+//     newUser[input.id] = input.value;
+//     clearInputField(input);
+//     validateInputBackground(input);
+//   });
+
+//   return newUser;
+// }
+
+
+
+
+
+
+
+
+// This function will add the user into the array
 function addUserToArray(user) {
   usersArray.push(user);
   console.log(usersArray);
 }
 
+// function handleSaveNewUser(e) {
+//   e.preventDefault();
+
+//   const user = captureUserData();
+//   clearProfilePicture();
+//   addUserToArray(user);
+// }
+
 function handleSaveNewUser(e) {
   e.preventDefault();
 
   const user = captureUserData();
+  if (user === null) {
+    console.log("Por favor complete todos los campos");
+    return;
+  }
+
   clearProfilePicture();
   addUserToArray(user);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// convert the image to a file and then show the profile picture in the section 
 function handleImageUpload() {
   const file = input.files[0];
   if (file) {
@@ -95,7 +168,7 @@ function handleInputBlur(input) {
   const parentElement = input.parentElement;
   parentElement.classList.remove("active", "active-error");
   if (!input.validity.valid) {
-    parentElement.classList.add("active-error");
+    parentElement.classList.add("active-error", "active-error-message");
   } else {
     parentElement.classList.add("active");
   }
