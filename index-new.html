@@ -110,50 +110,50 @@
                                         <div class="form-content">
                                             <label for="user">Full Name:</label>
                                             <div class="input-container">
-                                                <input class="login-input input-modal" type="text" id="user" name="user" placeholder="Enter your full name" required>
+                                                <input class="login-input input-modal" type="text" id="user" name="user" placeholder="Enter your full name" required data-type="full name">
                                                 <span class="input-icon-left"><i class='bx bx-user'></i></span>
-                                                <p class="error-message">Please enter a valid name</p>
+                                                <!-- <p class="error-message"></p> -->
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="email">Email:</label>
                                             <div class="input-container">
-                                                <input class="login-input input-modal" type="email" id="email" name="email" placeholder="Enter your email" required>
+                                                <input class="login-input input-modal" type="email" id="email" name="email" placeholder="Enter your email" required data-type="email">
                                                 <span class="input-icon-left"><i class='bx bx-envelope'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="phone">Phone Number:</label>
                                             <div class="input-container">
-                                                <input class="login-input input-modal" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                                                <input class="login-input input-modal" type="tel" id="phone" name="phone" placeholder="Enter your phone number" required data-type="phone number">
                                                 <span class="input-icon-left"><i class='bx bx-phone'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="job-title">Job Title:</label>
                                             <div class="input-container">
-                                                <input class="login-input input-modal" type="text" id="job-title" name="job-title" placeholder="Enter your job title" required>
+                                                <input class="login-input input-modal" type="text" id="job-title" name="job-title" placeholder="Enter your job title" required data-type="job title">
                                                 <span class="input-icon-left"><i class='bx bx-briefcase'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="manager">Manager:</label>
                                             <div class="input-container">
-                                                <input class="login-input input-modal" type="text" id="manager" name="manager" placeholder="Enter your manager's name" required>
+                                                <input class="login-input input-modal" type="text" id="manager" name="manager" placeholder="Enter your manager's name" required data-type="manager">
                                                 <span class="input-icon-left"><i class='bx bx-user'></i></span>
                                             </div>
                                         </div>
                                         <div class="form-content">
                                             <label for="office">Office:</label>
                                             <div class="input-container">
-                                                <input class="login-input input-modal" type="text" id="office" name="office" placeholder="Enter the office" required>
+                                                <input class="login-input input-modal" type="text" id="office" name="office" placeholder="Enter the office" required data-type="office">
                                                 <span class="input-icon-left"><i class='bx bx-building'></i></span>
                                             </div>
                                         </div>
                                         
                                         <div class="form-content">
                                             <label for="noteArea">Note</label>
-                                            <textarea class="text_are-modale input-modal" name="note" id="messages" cols="20" rows="6" placeholder="Type a note please..."></textarea>
+                                            <textarea class="text_are-modale input-modal" name="note" id="messages" cols="20" rows="6" placeholder="Type a note please..." data-type="messages"></textarea>
                                         </div>
                                         <div class="input-content">
                                             <div class="cancel">Cancel</div>
@@ -354,6 +354,7 @@
             <section class="managers"></section>
         </main>
     </div>
+    <script src="./assets/js/validationModalForm.js"></script>
     <script src="./assets/js/navbar.js"></script>
     <script src="./assets/js/usersDirectory.js"></script>
     <script src="./assets/js/directory.js"></script>
