@@ -59,7 +59,7 @@ function validate(input) {
     if (validateMessage[typeOfInput]) {
         return validateMessage[typeOfInput];
     } else {
-        return "Please enter a valid value.";
+        // return "Please enter a valid value.";
     }
 }
 

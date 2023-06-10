@@ -1,3 +1,9 @@
+import { userProfile } from "./addNewUser";
+
+
+
+console.log(userProfile)
+
 function fillProfileData(users) {
     
     const container = document.getElementById('profiles-container');
