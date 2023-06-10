@@ -1,29 +1,29 @@
 
-const inputModal = document.querySelectorAll(".input-modal");
-const btnSaveNewUser = document.querySelector("#btnModalForm");
-const input = document.getElementById("profile-img");
-const image = document.getElementById("profileImage");
-const btnNewUser = document.querySelector(".content_add");
-const background = document.querySelector(".background-modal");
-const newUserModal = document.querySelector(".add_newuser-modal");
-const cancel = document.querySelector(".cancel");
-const errorMessage = document.querySelector(".error-message");
+// const inputModal = document.querySelectorAll(".input-modal");
+// const btnSaveNewUser = document.querySelector("#btnModalForm");
+// // const input = document.getElementById("profile-img");
+// // const image = document.getElementById("profileImage");
+// const btnNewUser = document.querySelector(".content_add");
+// const background = document.querySelector(".background-modal");
+// const newUserModal = document.querySelector(".add_newuser-modal");
+// const cancel = document.querySelector(".cancel");
+// const errorMessage = document.querySelector(".error-message");
 
 
 
 
 
 // btnSaveNewUser.addEventListener("click", handleSaveNewUser);
-input.addEventListener("change", handleImageUpload);
-btnNewUser.addEventListener("click", showNewUserModal);
+// input.addEventListener("change", handleImageUpload);
+// btnNewUser.addEventListener("click", showNewUserModal);
 // cancel.addEventListener("click", closeModalForm);
 
-function showNewUserModal(e) {
-  e.preventDefault();
-  newUserModal.classList.add("active-modal");
-  background.classList.add("active-modal");
-  // background.addEventListener("click", closeModal);
-}
+// function showNewUserModal(e) {
+//   e.preventDefault();
+//   newUserModal.classList.add("active-modal");
+//   background.classList.add("active-modal");
+//   // background.addEventListener("click", closeModal);
+// }
 
 // function closeModalForm() {
 //   clearProfilePicture();
@@ -137,17 +137,17 @@ function showNewUserModal(e) {
 // }
 
 // convert the image to a file and then show the profile picture in the section 
-function handleImageUpload() {
-  const file = input.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      image.src = e.target.result;
-      image.style.opacity = "1";
-    };
-    reader.readAsDataURL(file);
-  }
-}
+// function handleImageUpload() {
+//   const file = input.files[0];
+//   if (file) {
+//     const reader = new FileReader();
+//     reader.onload = function (e) {
+//       image.src = e.target.result;
+//       image.style.opacity = "1";
+//     };
+//     reader.readAsDataURL(file);
+//   }
+// }
 
 // function handleInputFocus(input) {
 //   input.parentElement.classList.add("active");
