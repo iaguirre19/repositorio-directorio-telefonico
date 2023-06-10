@@ -64,11 +64,11 @@ function validate(input) {
 }
 
 const validateMessage = {
-    "full name": "Please enter your full name.",
-    "email": "Please enter a valid email address.",
-    "phone number": "Please enter a valid phone number.",
-    "job title": "Please enter a valid job title.",
-    "manager": "Please enter the name of your manager.",
-    "office": "Please enter a valid office.",
+    fullName: "Please enter your full name.",
+    email: "Please enter a valid email address.",
+    phoneNumber: "Please enter a valid phone number.",
+    jobTitle: "Please enter a valid job title.",
+    manager: "Please enter the name of your manager.",
+    office: "Please enter a valid office.",
 };
 

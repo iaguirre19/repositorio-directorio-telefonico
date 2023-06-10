@@ -1,9 +1,3 @@
-import { userProfile } from "./addNewUser";
-
-
-
-console.log(userProfile)
-
 function fillProfileData(users) {
     
     const container = document.getElementById('profiles-container');
@@ -125,8 +119,8 @@ function fillProfileData(users) {
       }
   ];
   
-  // Ejemplo de uso de la función fillProfileData
-  fillProfileData(users);
+ 
+  fillProfileData(userProfile);
 
   
   
