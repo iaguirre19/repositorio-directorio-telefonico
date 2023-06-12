@@ -7,7 +7,7 @@
     width: 100%;
     height: 95%;
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 body.light-theme .card_detail-container{
     background-color: var(--background-cards-light);
@@ -15,7 +15,7 @@ body.light-theme .card_detail-container{
 .card_detail-content{
     height: 100%;
     background-color: var(--secunday-color);
-    border-radius: 2rem;
+    border-radius: 1rem;
     border: solid 1px var(--reslt-color);
     box-shadow: var(--shadow-cards-small);
     display: grid;
@@ -26,6 +26,7 @@ body.light-theme .card_detail-content{
     box-shadow: var(--box-shadow-card-light-midd);
 }
 .card_contact-main{
+    opacity: 0;
     width: 100%;
     height: 100%;
     display: grid;
@@ -341,6 +342,7 @@ body.light-theme .tooltip-header{
 .icons_dots-tooltip a:nth-child(2) span{
     font-size: 1.3rem;
     margin-left: 2rem;
+    color: var(--secunday-color);
     
 }
 /* notes section of the infor card */
