@@ -79,8 +79,7 @@ body.light-theme .search_bar-container input{
 }
 .add_circle-container{
     width: 14rem;
-    /* height: 4rem; */
-    padding: 1rem 1rem;
+    padding: .7rem 1rem;
     background-color: var(--btns-color);
     display: flex;
     align-items: center;
