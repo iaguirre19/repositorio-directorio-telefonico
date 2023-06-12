@@ -4,7 +4,6 @@ const btnCancel = document.querySelector(".cancel");
 const btnNewUser = document.querySelector(".content_add");
 const background = document.querySelector(".background-modal");
 const newUserModal = document.querySelector(".add_newuser-modal");
-const container = document.getElementById('profiles-container');
 
 const userProfile = [];
 
@@ -17,11 +16,11 @@ btnSaveNewUser.addEventListener("click", saveNewUserModal);
 
 function saveNewUserModal(e) {
   e.preventDefault();
-
+  
   const newUserObject = {};
   inputModal.forEach((input) => {
     const inputType = input.dataset.type;
-
+    
     if (input.value === "") {
       input.focus();
       input.parentElement.classList.add("active-error");
@@ -55,58 +54,60 @@ function saveNewUserModal(e) {
 }
 
 
-  
+
 function showNewUserModal(e) {
-    e.preventDefault();
-    newUserModal.classList.add("active-modal");
-    background.classList.add("active-modal");
-    background.addEventListener("click", closeModal);
+  e.preventDefault();
+  newUserModal.classList.add("active-modal");
+  background.classList.add("active-modal");
+  background.addEventListener("click", closeModal);
 };
 
 function closeModal(e) {
-    if (e.target === background) {
-        newUserModal.classList.remove("active-modal");
-        background.classList.remove("active-modal");
-        clearModalInputs(inputModal)
-    };
-};
-
-function clearModalInputs(inputValues) {
-    inputValues.forEach((input) => {
-        input.value = "";
-        if (
-            input.parentElement.classList.contains("active") ||
-            input.parentElement.classList.contains("active-error")){
-                input.parentElement.classList.remove("active");
-                input.parentElement.classList.remove("active-error");
-
-        const errorElement = input.parentElement.querySelector(
-            ".error-input-invalid"
-            );
-        if (errorElement) {
-            errorElement.remove();
-            }
-        }
-    });
-    image.src = "";
-    image.style.opacity = "0";
-}
-function closeModalForm(e){
+  if (e.target === background) {
     newUserModal.classList.remove("active-modal");
     background.classList.remove("active-modal");
     clearModalInputs(inputModal)
-}
+  };
+};
 
-function fillProfileData(users) {
+function clearModalInputs(inputValues) {
   
-  cleanHtml(container)
-
-  let i = 1;
-
-  users.forEach(function(user) {
-    const profile = document.createElement('a');
-    profile.className = 'card_profile';
-    profile.href = '#';
+  inputValues.forEach((input) => {
+    input.value = "";
+    if (
+      input.parentElement.classList.contains("active") ||
+      input.parentElement.classList.contains("active-error")){
+        input.parentElement.classList.remove("active");
+        input.parentElement.classList.remove("active-error");
+        
+        const errorElement = input.parentElement.querySelector(
+          ".error-input-invalid"
+          );
+          if (errorElement) {
+            errorElement.remove();
+          }
+        }
+      });
+      image.src = "";
+      image.style.opacity = "0";
+    }
+    function closeModalForm(e){
+      newUserModal.classList.remove("active-modal");
+      background.classList.remove("active-modal");
+      clearModalInputs(inputModal)
+    }
+    
+    function fillProfileData(users) {
+      const container = document.getElementById('profiles-container');
+      
+      cleanHtml(container)
+      
+      let i = 1;
+      
+      users.forEach(function(user) {
+        const profile = document.createElement('a');
+        profile.className = 'card_profile';
+        profile.href = '#';
 
 
     const checkbox = document.createElement('input');
@@ -140,6 +141,7 @@ function fillProfileData(users) {
 
 
     const chevron = document.createElement('span');
+    chevron.className = "arrow-link";
     chevron.innerHTML = '<i class="bx bx-chevron-right"></i>';
     profile.appendChild(chevron);
 
@@ -153,3 +155,9 @@ function fillProfileData(users) {
 function cleanHtml(container){
   container.innerHTML = '';
 }
+
+const cardContent = document.querySelector("#profiles-container");
+
+cardContent.addEventListener("click", (e) => {
+  console.log(e.target.classList);
+})
