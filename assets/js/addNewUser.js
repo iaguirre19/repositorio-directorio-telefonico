@@ -13,7 +13,6 @@ btnNewUser.addEventListener("click", showNewUserModal);
 btnCancel.addEventListener("click", closeModalForm);
 btnSaveNewUser.addEventListener("click", saveNewUserModal);
 
-console.log(generateId())
 
 const userProfile = [
   {
@@ -26,6 +25,7 @@ const userProfile = [
     manager: "Christian Colorado",
     office: "Remote",
     phoneNumber: "7778902179",
+    message:"We're delighted to have you join our team! Your expertise and success. Welcome aboard!"
   },
   {
     id: generateId(),
@@ -72,7 +72,6 @@ function saveNewUserModal(e) {
             closeModalForm(e);
             userProfile.push(newUserObject);
             fillProfileData(userProfile);
-            console.log(userProfile);
           };
 
           reader.readAsDataURL(imagen);
@@ -237,9 +236,50 @@ function cardDetail(data, id) {
 
       const officeCard = document.querySelector(".office-data");
       officeCard.textContent = user.office;
+
+      const messageCard = document.querySelector(".notes_card-body");
+      messageCard.appendChild(createMessageDiv("Monday", "12.36", user.message))
     
     }
 
   });
 
 }
+
+
+
+function createMessageDiv(day, time, message) {
+  const div = document.createElement('div');
+  div.classList.add('notes_message');
+
+  // const headerRightDiv = document.createElement('div');
+  // headerRightDiv.classList.add('header_right-date');
+
+  // var daySpan = document.createElement('span');
+  // daySpan.classList.add('header_right-day');
+  // daySpan.textContent = day;
+
+  // var timeSpan = document.createElement('span');
+  // timeSpan.classList.add('header_right-hrs');
+  // timeSpan.textContent = time;
+
+  // headerRightDiv.appendChild(daySpan);
+  // headerRightDiv.appendChild(timeSpan);
+
+  // var messageParagraph = document.createElement('p');
+  // messageParagraph.classList.add('body_text-p');
+  // messageParagraph.textContent = message;
+
+  // div.appendChild(headerRightDiv);
+  // div.appendChild(messageParagraph);
+
+  return div;
+}
+
+// // Ejemplo de uso:
+// var day = 'Monday';
+// var time = '17:20';
+// var message = "We're delighted to have you join our team! Your expertise and success. Welcome aboard!";
+
+// var messageDiv = createMessageDiv(day, time, message);
+// console.log(messageDiv.outerHTML);
