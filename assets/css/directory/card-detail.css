@@ -438,6 +438,9 @@ body.light-theme .tooltip-header{
   margin-bottom: 1rem;
   opacity: .7;
 }
+.header_right-hrs{
+    margin-left: 1rem;
+}
 
 .body_text-p {
     font-size: 12px;

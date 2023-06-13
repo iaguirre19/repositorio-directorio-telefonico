@@ -25,7 +25,7 @@ const userProfile = [
     manager: "Christian Colorado",
     office: "Remote",
     phoneNumber: "7778902179",
-    message:"We're delighted to have you join our team! Your expertise and success. Welcome aboard!"
+    messages:"We're delighted to have you join our team! Your expertise and success. Welcome aboard!"
   },
   {
     id: generateId(),
@@ -37,6 +37,7 @@ const userProfile = [
     manager: "Christian Colorado",
     office: "Remote",
     phoneNumber: "7772562179",
+    messages: "lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  "
   }
 ];
 
@@ -55,11 +56,13 @@ function saveNewUserModal(e) {
     if (inputValue === "") {
       errors.push(input);
       input.parentElement.classList.add("active-error");
-    } else {
+    } 
+    else {
       if (inputType === "phoneNumber") {
         const phoneNumber = inputValue.replace(/\s/g, "");
         newUserObject[inputType] = phoneNumber;
-      } else if (inputType === "profilePicture") {
+      } 
+      else if (inputType === "profilePicture") {
         const imagen = input.files[0];
         if (imagen) {
           const reader = new FileReader();
@@ -205,9 +208,10 @@ cardContent.addEventListener("click", (e) => {
 
 
     cardDetail(userProfile, parentId)
-    
+    console.log(userProfile)
   }
 });
+
 
 function cardDetail(data, id) {
   data.forEach((user) => {
@@ -238,48 +242,48 @@ function cardDetail(data, id) {
       officeCard.textContent = user.office;
 
       const messageCard = document.querySelector(".notes_card-body");
-      messageCard.appendChild(createMessageDiv("Monday", "12.36", user.message))
-    
+      const message = user.messages;
+      messageCard.appendChild(validateMessage(messageCard, message));
+      
+      
+      // messageCard.appendChild(validateMessage());
+
     }
-
   });
-
 }
 
+function validateMessage(container, message) {
+  cleanHtml(container)
+  return createMessageDiv("Monday", "10:32 AM", message)
+}
 
 
 function createMessageDiv(day, time, message) {
   const div = document.createElement('div');
   div.classList.add('notes_message');
 
-  // const headerRightDiv = document.createElement('div');
-  // headerRightDiv.classList.add('header_right-date');
+  const headerRightDiv = document.createElement('div');
+  headerRightDiv.classList.add('header_right-date');
 
-  // var daySpan = document.createElement('span');
-  // daySpan.classList.add('header_right-day');
-  // daySpan.textContent = day;
+  var daySpan = document.createElement('span');
+  daySpan.classList.add('header_right-day');
+  daySpan.textContent = day;
 
-  // var timeSpan = document.createElement('span');
-  // timeSpan.classList.add('header_right-hrs');
-  // timeSpan.textContent = time;
+  var timeSpan = document.createElement('span');
+  timeSpan.classList.add('header_right-hrs');
+  timeSpan.textContent = time;
 
-  // headerRightDiv.appendChild(daySpan);
-  // headerRightDiv.appendChild(timeSpan);
+  headerRightDiv.appendChild(daySpan);
+  headerRightDiv.appendChild(timeSpan);
 
-  // var messageParagraph = document.createElement('p');
-  // messageParagraph.classList.add('body_text-p');
-  // messageParagraph.textContent = message;
+  var messageParagraph = document.createElement('p');
+  messageParagraph.classList.add('body_text-p');
+  messageParagraph.textContent = message;
 
-  // div.appendChild(headerRightDiv);
-  // div.appendChild(messageParagraph);
+  div.appendChild(headerRightDiv);
+  div.appendChild(messageParagraph);
 
   return div;
 }
 
-// // Ejemplo de uso:
-// var day = 'Monday';
-// var time = '17:20';
-// var message = "We're delighted to have you join our team! Your expertise and success. Welcome aboard!";
 
-// var messageDiv = createMessageDiv(day, time, message);
-// console.log(messageDiv.outerHTML);
