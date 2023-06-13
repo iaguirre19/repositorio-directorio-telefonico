@@ -86,11 +86,20 @@ function saveNewUserModal(e) {
   });
 
   if (errors.length > 0) {
-    errors[0].focus();
+    errors[0].focus();   
   }
 
   newUserObject.id = generateId();
 };
+
+
+function validateErrorPicture(erros){
+  erros.forEach((error) => {
+    if(error.classList.contains("input-file")){
+      // const modalContainer = document.querySelector(".add_newuser-modal")
+    }
+  })
+}
 
 
 function showNewUserModal(e) {

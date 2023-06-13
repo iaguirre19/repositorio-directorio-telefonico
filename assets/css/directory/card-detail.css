@@ -39,6 +39,7 @@ body.light-theme .card_detail-content{
     grid-template-columns: .3fr 1fr .5fr;
     align-items: center;
     padding-left: 1rem;
+    position: relative;
 }
 .header_img{
     width: 6rem;
@@ -68,7 +69,7 @@ body.light-theme .card_detail-content{
 }
 .header-info .card-info{
     color: var(--subtext-color);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     display: flex;
     opacity: .6;
     align-items: center;
@@ -80,14 +81,16 @@ body.light-theme .card_detail-content{
 .header-icons{
     align-self: center;
     justify-self: center;
-    width: 100%;
+    width: 12rem;
     height: 50%;
     display: flex;
     align-items: start;
     justify-content: space-around;
-    margin-top: -2rem;
+    /* margin-top: -2rem; */
     margin-right: 2rem;
-    position: relative;
+    position: absolute;
+    right: 0;
+    top: 1.2rem;
     
 }
 .header-icons .icons_right-header{
@@ -100,7 +103,7 @@ body.light-theme .card_detail-content{
     display: grid;
     place-content: center;
     cursor: pointer;
-    box-shadow: var(--shadow-btn);
+    box-shadow: var(--shadow-small);
     transition: all .5s ease-in-out;
 }
 body.light-theme .header-icons .icons_right-header{
@@ -111,16 +114,19 @@ body.light-theme .header-icons .icons_right-header{
     background-color: var(--hover-color);
     box-shadow: var(--shadow-btn-hover);
 }
+body.light-theme .header-icons .icons_right-header:hover{
+    background-color: var(--link-color-sub);
+}
 .header-icons .icons_right-header i{
     font-size: 1.5rem;
     color: var(--text-color);
 }
-body.light-theme .header-icons .icons_right-header i{
-    color: #007bff;
+body.light-theme .icons_right-header i{
+    color: black;
 }
-/* .header_icons-dots{
-    display: none;
-} */
+body.light-theme .header-icons .icons_right-header:hover i{
+    color: white;
+}
 .contact_middle{
     border-bottom: solid 1px var(--reslt-color);
     display: grid;
@@ -308,7 +314,7 @@ body.light-theme .tooltip-header{
     border: .1rem solid #ccc;
     padding: 1rem;
     z-index: 1;
-    height: 10rem;
+    height: 10.5rem;
     width: 13rem;
     border-radius: 1rem;
     box-shadow: var(--shadow-btn-hover);
@@ -323,19 +329,34 @@ body.light-theme .tooltip-header{
 .icons_dots-tooltip a{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     height: 4rem;
     cursor: pointer;
+    text-align: left;
 }
+.icons_dots-tooltip a:hover{
+    background-color: var(--btns-color);
+    border-radius: 1rem;
+}
+
+
 .icons_dots-tooltip a:nth-child(1) i,
 .icons_dots-tooltip a:nth-child(2) i{
-    font-size: 20px;
+    font-size: 18px;
 }
+
 
 .icons_dots-tooltip a:nth-child(1) i{
     color: var(--hover-color);
 }
+.icons_dots-tooltip a:nth-child(1):hover i{
+    color: white;
+}
 .icons_dots-tooltip a:nth-child(2) i{
     color: var(--color-error);
+}
+.icons_dots-tooltip a:nth-child(2):hover i{
+    color: white;
 }
 .icons_dots-tooltip a:nth-child(1) span,
 .icons_dots-tooltip a:nth-child(2) span{
@@ -343,6 +364,10 @@ body.light-theme .tooltip-header{
     margin-left: 2rem;
     color: black;
     
+}
+.icons_dots-tooltip a:nth-child(1):hover span,
+.icons_dots-tooltip a:nth-child(2):hover span{
+    color: white;
 }
 /* notes section of the infor card */
 
