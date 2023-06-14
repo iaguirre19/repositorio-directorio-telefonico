@@ -19,21 +19,43 @@ function handleImageUpload() {
 }
 
 
-// This function takes an array and performs a validation to determine whether to display a message if the user has not entered a correct value for each input. It also changes the background color of the icon on the left to red if the value is incorrect, or green if the user has entered the correct value. 
-inputsValidation.forEach((input) => {
-    input.addEventListener("blur", () => {
-        if (input.validity.valid) {
-            input.parentElement.classList.add("active");
-            input.parentElement.classList.remove("active-error");
-            removeErrorMessage(input);
-        } else {
-            input.parentElement.classList.add("active-error");
-            console.log("Se activó el error");
-            createErrorMessage(input, validate(input));
-        }
-    });
+
+inputsValidation.forEach((inputElement) => {
+  inputElement.addEventListener("blur", () => {
+    if (inputElement.validity.valid) {
+      toggleActiveClass(inputElement.parentElement, true);
+      const errorProfile = document.querySelector(".profile_picture-error");
+      errorProfile.style.display = "none";
+      removeErrorMessage(inputElement);
+    } else {
+      toggleActiveClass(inputElement.parentElement, false);
+      createErrorMessage(inputElement, validate(inputElement));
+    }
+  });
 });
 
+function toggleActiveClass(element, isValid) {
+  if (isValid) {
+    element.classList.add("active");
+    element.classList.remove("active-error");
+  } else {
+    element.classList.add("active-error");
+    element.classList.remove("active");
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// This function create an error message when the user doesn't type any value into the input
 function createErrorMessage(input, message) {
     if (!hasErrorMessage(input)) {
         const errorMessageP = document.createElement("p");
@@ -42,6 +64,7 @@ function createErrorMessage(input, message) {
         input.parentElement.appendChild(errorMessageP);
     }
 }
+
 
 function removeErrorMessage(input) {
     const errorMessage = input.parentElement.querySelector(".error-input-invalid");
@@ -58,8 +81,6 @@ function validate(input) {
     const typeOfInput = input.dataset.type;
     if (validateMessage[typeOfInput]) {
         return validateMessage[typeOfInput];
-    } else {
-        // return "Please enter a valid value.";
     }
 }
 

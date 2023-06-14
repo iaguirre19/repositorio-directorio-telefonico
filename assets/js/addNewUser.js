@@ -34,7 +34,7 @@ const userProfile = [
     fullName: "Max Verstappen",
     email: "verstappen@redbullracing.com",
     jobTitle: "Sr Full Stack",
-    manager: "Christian Colorado",
+    manager: "Adriana Gallardo",
     office: "Remote",
     phoneNumber: "7772562179",
     messages: "lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  "
@@ -64,6 +64,7 @@ function saveNewUserModal(e) {
       } 
       else if (inputType === "profilePicture") {
         const imagen = input.files[0];
+        
         if (imagen) {
           const reader = new FileReader();
 
@@ -75,6 +76,7 @@ function saveNewUserModal(e) {
             closeModalForm(e);
             userProfile.push(newUserObject);
             fillProfileData(userProfile);
+
           };
 
           reader.readAsDataURL(imagen);
@@ -87,18 +89,31 @@ function saveNewUserModal(e) {
 
   if (errors.length > 0) {
     errors[0].focus();   
+    validateErrorPicture(errors)
   }
 
   newUserObject.id = generateId();
 };
 
+function validateErrorPicture(errors) {
+  const modalContainer = document.querySelector(".add_newuser-modal");
+  const existingErrors = modalContainer.querySelectorAll(
+    ".profile_picture-error"
+  );
 
-function validateErrorPicture(erros){
-  erros.forEach((error) => {
-    if(error.classList.contains("input-file")){
-      // const modalContainer = document.querySelector(".add_newuser-modal")
+  existingErrors.forEach((error) => {
+    error.remove();
+  });
+
+  errors.forEach((error) => {
+    if (error.classList.contains("input-file")) {
+      const profilePictureError = document.createElement("span");
+      profilePictureError.className = "profile_picture-error";
+      profilePictureError.textContent = "Please upload a profile picture";
+
+      modalContainer.appendChild(profilePictureError);
     }
-  })
+  });
 }
 
 
@@ -138,6 +153,7 @@ function clearModalInputs(inputValues) {
   image.src = "";
   image.style.opacity = "0";
 }
+
 function closeModalForm(e) {
   newUserModal.classList.remove("active-modal");
   background.classList.remove("active-modal");

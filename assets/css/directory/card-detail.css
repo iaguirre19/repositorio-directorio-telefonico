@@ -63,6 +63,7 @@ body.light-theme .card_detail-content{
     color: var(--text-color);
     font-weight: 500;
     margin-bottom: .8rem;
+    width: 70%;
 }
 .card_info-container{
     display: flex;
@@ -104,7 +105,7 @@ body.light-theme .card_detail-content{
     place-content: center;
     cursor: pointer;
     box-shadow: var(--shadow-small);
-    transition: all .5s ease-in-out;
+    transition: all .3s ease;
 }
 body.light-theme .header-icons .icons_right-header{
     background-color: var(--background-cards-light);
