@@ -40,6 +40,72 @@ const userProfile = [
     messages: "lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  "
   }
 ];
+let userProfilesArray = [];
+
+
+
+
+
+
+
+
+
+
+// function saveNewUserModal(e) {
+//   e.preventDefault();
+
+//   const newUserObject = {};
+//   const errors = [];
+
+//   inputModal.forEach((input) => {
+//     const inputType = input.dataset.type;
+//     const inputValue = input.value.trim();
+
+//     if (inputValue === "") {
+//       errors.push(input);
+//       input.parentElement.classList.add("active-error");
+//     } 
+//     else {
+//       if (inputType === "phoneNumber") {
+//         const phoneNumber = inputValue.replace(/\s/g, "");
+//         newUserObject[inputType] = phoneNumber;
+//       } 
+//       else if (inputType === "profilePicture") {
+//         const imagen = input.files[0];
+        
+//         if (imagen) {
+//           const reader = new FileReader();
+
+//           reader.onload = function (event) {
+//             const imageURL = event.target.result;
+
+//             newUserObject[inputType] = imageURL;
+
+//             closeModalForm(e);
+//             userProfile.push(newUserObject);
+//             fillProfileData(userProfile);
+
+//           };
+
+//           reader.readAsDataURL(imagen);
+//         }
+//       } else {
+//         newUserObject[inputType] = inputValue;
+//       }
+//     }
+//   });
+
+//   if (errors.length > 0) {
+//     errors[0].focus();   
+//     validateErrorPicture(errors)
+//   }
+
+//   newUserObject.id = generateId();
+//   extractMessagesAndIdFromArray(userProfile);
+// };
+
+
+
 
 
 
@@ -92,8 +158,57 @@ function saveNewUserModal(e) {
     validateErrorPicture(errors)
   }
 
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleString();
+  newUserObject.dateAdded = formattedDate;
+
   newUserObject.id = generateId();
+  extractMessagesAndIdFromArray(userProfile);
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function extractMessagesAndIdFromArray(userProfiles) {
+  userProfiles.forEach((userProfile) => {
+    const { messages, id } = userProfile;
+    const newObject = { messages, id };
+    userProfilesArray.push(newObject);
+  });
+}
 
 function validateErrorPicture(errors) {
   const modalContainer = document.querySelector(".add_newuser-modal");
@@ -229,7 +344,9 @@ cardContent.addEventListener("click", (e) => {
 
     const parentElement = e.target.parentNode.parentNode;
     const parentId = parentElement.id;
+    extractMessagesAndIdFromArray(userProfile);
 
+    // console.log(userProfilesArray);
 
 
     cardDetail(userProfile, parentId)

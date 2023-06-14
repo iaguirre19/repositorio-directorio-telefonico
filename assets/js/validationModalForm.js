@@ -25,7 +25,9 @@ inputsValidation.forEach((inputElement) => {
     if (inputElement.validity.valid) {
       toggleActiveClass(inputElement.parentElement, true);
       const errorProfile = document.querySelector(".profile_picture-error");
-      errorProfile.style.display = "none";
+      if(errorProfile){
+        errorProfile.style.display = "none";
+      }
       removeErrorMessage(inputElement);
     } else {
       toggleActiveClass(inputElement.parentElement, false);
@@ -43,17 +45,6 @@ function toggleActiveClass(element, isValid) {
     element.classList.remove("active");
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // This function create an error message when the user doesn't type any value into the input
 function createErrorMessage(input, message) {

@@ -62,11 +62,12 @@ body.light-theme .card_detail-content{
     font-size: calc(var(--subtitles-size) - 1.2rem);
     color: var(--text-color);
     font-weight: 500;
-    margin-bottom: .8rem;
+    margin-bottom: .5rem;
     width: 70%;
 }
 .card_info-container{
     display: flex;
+    flex-direction: column;
 }
 .header-info .card-info{
     color: var(--subtext-color);
@@ -75,9 +76,6 @@ body.light-theme .card_detail-content{
     opacity: .6;
     align-items: center;
     column-gap: 1rem;
-}
-.header-info .card-phone{
-    margin-left: 1.5rem;
 }
 .header-icons{
     align-self: center;
