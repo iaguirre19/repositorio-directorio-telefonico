@@ -1,19 +1,17 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-// import AdminProfiles from "./models/AdminProfiles.js";
-import router from "./routes/adminProfilesRoutes.js";
-router
+import adminRoutes from "./routes/adminProfilesRoutes.js";
 const app = express();
 
+app.use(express.json()) // esta linea convierte el POST en un archivo json legible
+
 dotenv.config()
-
-
 connectDB()
 
-app.use("/api/userAdmin",  router);
+app.use("/api/userAdmin",  adminRoutes);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`servidor funcionando en el puerto ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
