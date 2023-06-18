@@ -1,6 +1,6 @@
 import express  from "express";
 const router = express.Router();
-import {register, profile} from "../controllers/adminRolesController.js"
+import {register, profile} from "../controllers/adminControllers.js"
 
 router.post("/", register);
 router.get("/profile", profile)
