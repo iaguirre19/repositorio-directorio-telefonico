@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import bcrypt from 'bcrypt';
+import idGenerator from "../helpers/idgenerator.js";
 
 const adminRoleSchema = mongoose.Schema({
   name: {
@@ -23,6 +25,7 @@ const adminRoleSchema = mongoose.Schema({
   },
   token: {
     type: String,
+    default: idGenerator()
   },
   confirmed: {
     type: Boolean,
@@ -30,5 +33,21 @@ const adminRoleSchema = mongoose.Schema({
   },
 });
 
-const AdminProfiles = mongoose.model("UserAdmin", adminRoleSchema);
+// Hashear el password 
+adminRoleSchema.pre("save", async function(next){
+  if(!this.isModified("password", )){
+    next();
+  }
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+
+});
+
+adminRoleSchema.methods.comparePassword = async function(passwordForm){
+  return await bcrypt.compare(passwordForm, this.password);
+};
+
+
+
+const AdminProfiles = mongoose.model("userAdmin", adminRoleSchema);
 export default AdminProfiles

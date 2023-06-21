@@ -1,17 +1,22 @@
 import mongoose from "mongoose";
-// C5Hi3iLhkWlGfMJg
+
 const connectDB = async () => {
-    try{
+    try {
         const db = await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        const url = `${db.connection.host}:${db.connection.port}`
-        console.log(`MongoDB conectado en : ${url}`);
-    }catch(error){
-        console.log(`error: ${error.message}`);
+
+      // Obtener el nombre de la base de datos de la conexión activa
+        // const dbName = db.connection.db.databaseName;
+
+        const url = `${db.connection.host}:${db.connection.port}`;
+        console.log(`MongoDB conectado en: ${url}`);
+        // console.log(`Base de datos: ${dbName}`);
+    } catch (error) {
+        console.log(`Error: ${error.message}`);
         process.exit(1);
     }
-}
+};
 
-export default connectDB
+export default connectDB;

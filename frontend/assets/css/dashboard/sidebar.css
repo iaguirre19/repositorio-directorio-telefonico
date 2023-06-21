@@ -1,5 +1,3 @@
-/*Google font CDN Link*/
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap'); */
 
 body{
     background-color: var(--secunday-color);
@@ -19,7 +17,7 @@ body{
     z-index: 4;
 }
 .sidebar.active{
-    width:35rem;/*Cuando el boton se activa es el ancho del sidebar*/
+    width:25rem;
 }
 
 .sidebar .logo_content .logo{
@@ -59,7 +57,7 @@ body{
     transform: translateX(-50%);
 }
 .sidebar.active #btn{
-    left: 92%; /*Esto coloca el icono de hamburguesa a la derecha pegado al borde cuando se activa el boton */
+    left: 92%; 
 }
 .sidebar ul{
     margin-top: 2rem;

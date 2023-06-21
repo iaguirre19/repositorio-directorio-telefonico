@@ -127,8 +127,8 @@ main{
 }
 
 .sidebar.active ~ .home_content{
-    width: calc(100% - 342px);
-    left: 35rem;
+    width: calc(100% - 250px);
+    left: 25rem;
     /* z-index: -1; */
 }
 .dashboard,
