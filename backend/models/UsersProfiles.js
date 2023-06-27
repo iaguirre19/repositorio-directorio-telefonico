@@ -1,34 +1,38 @@
-// import mongoose from "mongoose";
-// import idGenerator from "../helpers/idgenerator";
+import mongoose, { mongo } from "mongoose";
 
 
-// const userSchema = mongoose.Schema({
-//     name: {
-//         type: String,
-//         required: true,
-//         trim: true,
-//     },
-//         password: {
-//       type: String,
-//       required: true,
-//     },
-//     email: {
-//         type: String,
-//         required: true,
-//         unique: true,
-//         trim: true,
-//     },
-//     phone: {
-//         type: String,
-//         default: null,
-//         trim: true,
-//     },
-//     token: {
-//       type: String,
-//       default: idGenerator(),
-//     },
-//     confirmed: {
-//       type: Boolean,
-//       default: false,
-//     },
-// });
+const userSchema = mongoose.Schema({
+    name: {
+        type: String,
+        require: true,
+        trim: true,
+    },
+    office: {
+        type: String,
+        required: true,
+        trim: true,
+        lowercase: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+    },
+    extention: {
+        type: String,
+        default: null,
+        trim: true,
+    },
+    manager: {
+        type: String,
+        trim: true,
+    },
+    rol: {
+        type: String,
+        trim:true,
+    }
+});
+
+const user = mongoose.model("User", userSchema);
+export default user

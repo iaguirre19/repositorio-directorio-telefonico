@@ -12,21 +12,15 @@ const adminRoleSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  office:{
-    type: String,
-    required: true,
-    trim: true,
-    lowercase: true,
-  },
   email: {
     type: String,
     required: true,
     unique: true,
     trim: true,
   },
-  extention: {
+  rol: {
     type: String,
-    default: null,
+    required: true,
     trim: true,
   },
   token: {

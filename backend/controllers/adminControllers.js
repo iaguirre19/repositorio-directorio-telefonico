@@ -47,6 +47,7 @@ const forgottenPassword = async (req, res) => {
 
 
 }
+
 const verifyToken = async (req, res) => {
     const { token } = req.params;
 
@@ -60,7 +61,7 @@ const verifyToken = async (req, res) => {
     }
 };
 
-
+// this function creates the new password and saves it in the database
 const newPassword = async (req, res) => {
     const {token} = req.params;
     const { password } = req.body;
@@ -130,5 +131,14 @@ const confirmation = async (req, res) => {
         console.log(error)
     }
 }
+const phoneBook = async (req, res) => {
+    try {
+        const users = await AdminProfiles.find().select("-password -token -confirmed");
 
-export{ register, profile, confirmation, authenticator, forgottenPassword, verifyToken, newPassword}
+        res.json(users); // Envía la lista de usuarios en formato JSON como respuesta
+    } catch (error) {
+        res.status(500).json({ message: "Error al obtener los usuarios", error });
+    }
+}
+
+export{ register, profile, confirmation, authenticator, forgottenPassword, verifyToken, newPassword, phoneBook}

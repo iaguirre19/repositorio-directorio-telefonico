@@ -8,6 +8,7 @@ import {
     forgottenPassword,
     verifyToken,
     newPassword,
+    phoneBook
 } from "../controllers/adminControllers.js"
 import checkAuth from "../middleware/authMiddleware.js";
 
@@ -18,8 +19,8 @@ router.post("/", register);
 router.get("/confirmation/:token", confirmation);
 router.post("/forgotten-password", forgottenPassword);
 router.route("/forgotten-password/:token").get(verifyToken).post(newPassword);
-// router.post("/search", search)
 router.post("/login", authenticator);
+// router.get("/phone-book", phoneBook);
 
 
 
