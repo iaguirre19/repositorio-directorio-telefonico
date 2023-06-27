@@ -40,14 +40,7 @@ const userProfile = [
     messages: "lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  lorem Ipsum is  Lorem Ipsum  "
   }
 ];
-let userProfilesArray = [];
-
-
-
-
-
-
-
+export let userProfilesArray = [];
 
 
 
@@ -103,10 +96,6 @@ let userProfilesArray = [];
 //   newUserObject.id = generateId();
 //   extractMessagesAndIdFromArray(userProfile);
 // };
-
-
-
-
 
 
 function saveNewUserModal(e) {
@@ -166,41 +155,6 @@ function saveNewUserModal(e) {
   extractMessagesAndIdFromArray(userProfile);
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function extractMessagesAndIdFromArray(userProfiles) {
   userProfiles.forEach((userProfile) => {

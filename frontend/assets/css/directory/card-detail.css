@@ -63,7 +63,7 @@ body.light-theme .card_detail-content{
     color: var(--text-color);
     font-weight: 500;
     margin-bottom: .5rem;
-    width: 70%;
+    
 }
 .card_info-container{
     display: flex;
