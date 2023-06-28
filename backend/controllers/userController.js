@@ -21,7 +21,11 @@ const createUser = async (req, res) => {
 }
 
 
-const getUser = (req, res) => {};
+const getUser = async (req, res) => {
+    const dataUsers = await UsersProfile.find();
+    console.log(dataUsers)
+    res.json({msg: "Now you are connected to DB"})
+};
 
 
 
