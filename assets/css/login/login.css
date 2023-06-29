@@ -18,7 +18,7 @@ section{
     align-items: center;
 }
 .login__container{
-    width: 70%;
+    width: 90rem;
     height: 80vh;
     margin: 0 auto;
     display: grid;
@@ -47,13 +47,15 @@ section{
 
 .login__content-right{
     display: grid;
-    grid-template-rows: 30% 50% 20%;
+    /* grid-template-rows: 30% 50% 20%; */
+    grid-template-rows: auto 1fr auto;
+    padding: 1.6rem;
 }
 .login__right-title{
     text-align: center;
     align-self: center;
-    padding: 0 2rem;
-    margin-bottom: 4rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
 }
 .login__right-title h2{
     font-size: 20px;
@@ -64,10 +66,11 @@ section{
     opacity: .7;
 }
 .login__right-form{
-    width: 80%;
+    width: 100%;
     justify-self: center;
     display: flex;
     flex-direction: column;
+    padding: 0rem 1rem;
 }
 .login__right-form label{
     margin-bottom: .5rem;
@@ -121,7 +124,7 @@ section{
     
 }
 .login-btn{
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 1rem;
     font-size: var(--links-size);
     background-color: var(--base-color);
@@ -145,7 +148,7 @@ section{
     width: 100%;
     height: 20px;
     border-top: solid 1px var(--base-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     opacity: .4;
 }
 .login__data-line::before{

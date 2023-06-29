@@ -19,6 +19,17 @@ body{
 .sidebar.active{
     width:25rem;
 }
+.sidebar .logo_content #btn{
+    transition: all .3s ease-in;
+    border-radius: 50%;
+}
+.sidebar .logo_content #btn:hover{
+    background-color: var(--background-links);
+}
+.sidebar.active .logo_content #btn:hover{
+    background-color: transparent;
+    border-radius: 100%;
+}
 
 .sidebar .logo_content .logo{
     color: var(--text-color-sidebar);
@@ -43,6 +54,11 @@ body{
     font-size: 2rem;
     font-weight: 400;
     margin-left: 2rem;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.sidebar.active .logo_content .logo .logo_name{
+    opacity: 1;
 }
 .sidebar #btn{
     position: absolute;
