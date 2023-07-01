@@ -55,8 +55,6 @@
 // const AdminProfiles = mongoose.model("userAdmin", adminRoleSchema);
 // export default AdminProfiles
 
-
-
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import idGenerator from "../helpers/idgenerator.js";
@@ -66,6 +64,7 @@ const adminRoleSchema = mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    lowercase: true,
   },
   password: {
     type: String,
@@ -81,6 +80,7 @@ const adminRoleSchema = mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    lowercase: true,
   },
   profilePicture: {
     data: Buffer,

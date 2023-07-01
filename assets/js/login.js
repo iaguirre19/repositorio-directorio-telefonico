@@ -1,4 +1,4 @@
-import { loginValidation } from "./api/loginAcces.js";
+import { loginValidation} from "./api/loginAcces.js";
 
 const inputsForms = document.querySelectorAll(".login-input");
 const showPasswordIcon = document.querySelector("#showPassword");
@@ -28,8 +28,9 @@ function createUser(emailInput, passwordInput) {
 btnlogin.addEventListener("click", (e) => {
   e.preventDefault();
   const user = createUser(userLogin, passwordLogin);
-  // console.log(user)
-  loginValidation(user);
+  const dato = loginValidation(user);
+  // alert(dato)
+
 });
 
 activeInputsOnClick();

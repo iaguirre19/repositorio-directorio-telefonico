@@ -1,14 +1,23 @@
-export const userData = [];
-const urlLogin = "http://localhost:4000/api/userAdmin/test";
+// import { response } from "express";
+
+const urlLogin = "http://localhost:4000/api/userAdmin/login";
+
+
+let errorMessage;
 
 export const loginValidation = async (client) => {
   try {
-    console.log(client);
     const response = await fetch(urlLogin, {
       method: "POST",
       body: JSON.stringify(client),
       headers: { "Content-Type": "application/json" },
     });
+
+    if (response.status === 404) {
+      const errorData = await response.json();
+      const errorMessage = errorData.msg;
+      throw new Error(errorMessage);
+    }
 
     if (!response.ok) {
       throw new Error(
@@ -17,9 +26,14 @@ export const loginValidation = async (client) => {
     }
 
     const data = await response.json();
-    userData.push(data);
-    return userData;
+    return data;
   } catch (error) {
     console.log(error.message);
+    // Mostrar una alerta en la página
+    alert(error.message);
   }
 };
+
+
+
+

@@ -4,102 +4,67 @@ import idGenerator from "../helpers/idgenerator.js";
 import AdminProfiles from "../models/AdminProfiles.js"
 
 // Configurar multer para manejar la subida de archivos
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads"); // Directorio donde se guardarán las imágenes subidas
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.originalname); // Mantener el nombre original del archivo
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "uploads"); // Directorio donde se guardarán las imágenes subidas
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.originalname); // Mantener el nombre original del archivo
+//   },
+// });
 
-const upload = multer({ storage });
-
-const register = async (req, res) => {
-  const { email } = req.body;
-
-  const thereIsUser = await AdminProfiles.findOne({ email });
-
-  if (thereIsUser) {
-    const error = new Error("User already has an account");
-    return res.status(400).json({ msg: error.message });
-  }
-
-  try {
-    const adminUser = new AdminProfiles(req.body);
-
-    // Guardar la imagen en MongoDB
-    if (req.file) {
-      const imagePath = req.file.path; // Ruta de la imagen subida
-      await adminUser.saveProfilePicture(imagePath);
-    }
-
-    const adminUserSave = await adminUser.save();
-    res.json(adminUserSave);
-  } catch (error) {
-    console.error("Error registering user:", error);
-    res.status(500).json({ msg: "An error occurred while registering user" });
-  }
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const upload = multer({ storage });
 
 // const register = async (req, res) => {
-//     const {email} = req.body
+//   const { email } = req.body;
 
-//     const thereIsUser = await AdminProfiles.findOne({email});
+//   const thereIsUser = await AdminProfiles.findOne({ email });
 
-//     if(thereIsUser){
-//         const error = new Error("User already have account");
-//         return res.status(400).json({msg: error.message})
+//   if (thereIsUser) {
+//     const error = new Error("User already has an account");
+//     return res.status(400).json({ msg: error.message });
+//   }
+
+//   try {
+//     const adminUser = new AdminProfiles(req.body);
+
+//     // Guardar la imagen en MongoDB
+//     if (req.file) {
+//       const imagePath = req.file.path; // Ruta de la imagen subida
+//       await adminUser.saveProfilePicture(imagePath);
 //     }
 
-//     try {
-//         const adminUser = new AdminProfiles(req.body);
-//         const adminUserSave = await adminUser.save()
-//         res.json(adminUserSave)
-//     } catch (error) {
-//         console.log("error")
-//     }
-// }
+//     const adminUserSave = await adminUser.save();
+//     res.json(adminUserSave);
+//   } catch (error) {
+//     console.error("Error registering user:", error);
+//     res.status(500).json({ msg: "An error occurred while registering user" });
+//   }
+// };
 
 
 
 
 
+const register = async (req, res) => {
+    const {email} = req.body
+
+    const thereIsUser = await AdminProfiles.findOne({email});
 
 
+    if(thereIsUser){
+        const error = new Error("User already have account");
+        return res.status(400).json({msg: error.message})
+    }
 
-
-
-
-
+    try {
+        const adminUser = new AdminProfiles(req.body);
+        const adminUserSave = await adminUser.save()
+        res.json(adminUserSave)
+    } catch (error) {
+        console.log("error")
+    }
+}
 
 
 const profile = (req, res) => {
@@ -173,7 +138,7 @@ const authenticator = async (req, res) => {
     const user = await AdminProfiles.findOne({email});
 
     if(!user){
-        const error = new Error("The user does not exist")
+        const error = new Error("The user does not exist please type a valid username")
         return res.status(404).json({msg: error.message})
     }
     // check if the user already confirmed his account
