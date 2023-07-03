@@ -1,4 +1,4 @@
-import multer from "multer";
+
 import generateJWT from "../helpers/generateJWT.js";
 import idGenerator from "../helpers/idgenerator.js";
 import AdminProfiles from "../models/AdminProfiles.js"
